@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://el2nfg1fydul"]
+
+[ext_resource type="Script" uid="uid://c8nk6u4sq2p7h" path="res://game_manager.gd" id="1_70yv6"]
+
+[node name="GameManager" type="Node2D" unique_id=1922977521]
+script = ExtResource("1_70yv6")
+
+[node name="People" type="Node" parent="." unique_id=443070008]
+
+[node name="Travel Nodes" type="Node" parent="." unique_id=1545301525]
+
+[node name="Keyframes" type="Node" parent="." unique_id=1428742758]
