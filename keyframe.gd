@@ -1,9 +1,6 @@
-extends Node
+extends Resource
 class_name Keyframe
 
-@export var loc: TravelNode
+@export var travel_node_path: NodePath
 @export var time: float
 #var narration: String
-
-func _init() -> void:
-	print("Im alive")

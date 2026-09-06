@@ -7,8 +7,6 @@ var selected_person: Person
 var root: Node = EditorInterface.get_edited_scene_root()
 var people: Array[Person] = []
 
-
-
 func _run():
 	window = Window.new()
 	EditorInterface.popup_dialog(window, Rect2(Vector2(100,100),Vector2(1080,720)))
@@ -37,10 +35,8 @@ func _run():
 	
 func add_keyframe():
 	var temp = selected_person.route.duplicate()
-	var kf = Keyframe.new()
+	var kf: Keyframe = Keyframe.new()
 	temp.append(kf)
-	root.add_child(kf)
-	kf.owner = root
 	selected_person.route = temp
 
 func select_person(index: int):
