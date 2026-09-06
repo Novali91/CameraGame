@@ -1,12 +1,24 @@
 [gd_scene format=3 uid="uid://el2nfg1fydul"]
 
 [ext_resource type="Script" uid="uid://c8nk6u4sq2p7h" path="res://game_manager.gd" id="1_70yv6"]
+[ext_resource type="PackedScene" uid="uid://bvu7gak4r5ofl" path="res://person.tscn" id="2_o2178"]
+[ext_resource type="PackedScene" uid="uid://c8g7ccgaq1gjr" path="res://travel_node.tscn" id="3_d5upp"]
 
 [node name="GameManager" type="Node2D" unique_id=1922977521]
 script = ExtResource("1_70yv6")
 
 [node name="People" type="Node" parent="." unique_id=443070008]
 
+[node name="PersonA" parent="People" unique_id=738572913 instance=ExtResource("2_o2178")]
+
+[node name="PersonB" parent="People" unique_id=299382854 instance=ExtResource("2_o2178")]
+
+[node name="PersonC" parent="People" unique_id=548292400 instance=ExtResource("2_o2178")]
+
 [node name="Travel Nodes" type="Node" parent="." unique_id=1545301525]
+
+[node name="LocA" parent="Travel Nodes" unique_id=1611888515 instance=ExtResource("3_d5upp")]
+
+[node name="LocB" parent="Travel Nodes" unique_id=2110076651 instance=ExtResource("3_d5upp")]
 
 [node name="Keyframes" type="Node" parent="." unique_id=1428742758]

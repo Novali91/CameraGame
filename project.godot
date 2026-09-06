@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Camera Game"
+run/main_scene="uid://el2nfg1fydul"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*uid://c8nk6u4sq2p7h"
+GameManager="*uid://el2nfg1fydul"
 
 [display]
 
