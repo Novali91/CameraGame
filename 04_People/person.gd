@@ -15,6 +15,8 @@ var map: Map
 @export var height: int
 @export var weight: int
 
+@export var speed: float
+
 #currently only for editor view
 func _process(_delta: float) -> void:
 	map = get_node("../..") as Map #i know this is bad practice but it is for weird editor tool stuff

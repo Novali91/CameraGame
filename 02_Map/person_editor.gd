@@ -8,6 +8,9 @@ var root: Node = EditorInterface.get_edited_scene_root()
 var people: Array[Person] = []
 static var time: float = 0
 
+var start_keyframe_box: SpinBox
+var end_keyframe_box: SpinBox
+
 func _run():
 	window = Window.new()
 	EditorInterface.popup_dialog(window, Rect2(Vector2(100,100),Vector2(1080,720)))
@@ -44,7 +47,20 @@ func _run():
 	time_slider.step = 0.01
 	window.add_child(time_slider)
 	
-		
+	start_keyframe_box = SpinBox.new()
+	end_keyframe_box = SpinBox.new()
+	var fill_speed_button = Button.new()
+	window.add_child(start_keyframe_box)
+	window.add_child(end_keyframe_box)
+	window.add_child(fill_speed_button)
+	start_keyframe_box.position.y = 150
+	end_keyframe_box.position.y = 150
+	end_keyframe_box.position.x = 200
+	fill_speed_button.position.y = 150
+	fill_speed_button.position.x = 400
+	fill_speed_button.text = "Fill speed"
+	fill_speed_button.pressed.connect(fill_speed)
+	
 func add_keyframe():
 	var temp = selected_person.route.duplicate()
 	var kf: Keyframe = Keyframe.new()
@@ -58,3 +74,10 @@ func select_person(index: int):
 
 func set_time(time: float):
 	self.time = time
+
+func fill_speed():
+	for keyframe_index in range(start_keyframe_box.value + 1, end_keyframe_box.value):
+		var cur_kf = selected_person.route[keyframe_index]
+		var prev_kf = selected_person.route[keyframe_index-1]
+		var dist = (selected_person.get_travel_node(cur_kf).position - selected_person.get_travel_node(prev_kf).position).length()
+		cur_kf.time = prev_kf.time + dist / selected_person.speed
