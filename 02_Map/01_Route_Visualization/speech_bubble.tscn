@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c0w84j5tl2i0n"]
+
+[ext_resource type="Texture2D" uid="uid://d0lc64quicdgo" path="res://01_Assets/02_Icons/speech-bubble-png-0.png" id="1_25dmm"]
+
+[node name="SpeechBubble" type="Sprite2D" unique_id=1491152809]
+scale = Vector2(0.09958506, 0.099585064)
+texture = ExtResource("1_25dmm")
+
+[node name="NarrationContent" type="Label" parent="." unique_id=991071939]
+offset_left = -512.125
+offset_top = -200.83333
+offset_right = 623.02
+offset_bottom = 451.87506
+theme_override_font_sizes/font_size = 175
+
+[node name="IndexLabel" type="Label" parent="." unique_id=602120838]
+offset_left = -281.1667
+offset_top = -672.7917
+offset_right = 282.74634
+offset_bottom = -348.5417
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 250
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1

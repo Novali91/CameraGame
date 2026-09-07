@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://c8g7ccgaq1gjr"]
-
-[ext_resource type="Script" uid="uid://c026mxgdcwe6a" path="res://travel_node.gd" id="1_0gnea"]
-
-[node name="TravelNode" type="Node2D" unique_id=1611888515]
-script = ExtResource("1_0gnea")
