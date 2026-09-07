@@ -24,8 +24,9 @@ script = ExtResource("3_vk86k")
 travel_node_path = NodePath("../../Travel Nodes/LocD")
 time = 7.5
 
-[node name="GameManager" type="Node2D" unique_id=1922977521]
+[node name="GameManager" type="Node2D" unique_id=1922977521 node_paths=PackedStringArray("route_vis")]
 script = ExtResource("1_70yv6")
+route_vis = NodePath("Route Visualization")
 
 [node name="People" type="Node" parent="." unique_id=443070008]
 
@@ -52,3 +53,6 @@ position = Vector2(805, 184)
 
 [node name="LocD" parent="Travel Nodes" unique_id=1978150333 instance=ExtResource("3_d5upp")]
 position = Vector2(256, 478)
+
+[node name="Route Visualization" type="Line2D" parent="." unique_id=1438070625]
+points = PackedVector2Array(587, 415, 211, 295, 805, 184, 256, 478)
