@@ -5,7 +5,7 @@ class_name Person
 @export var route: Array[Keyframe] = []
 var selected_from_person_editor: bool = false
 var route_vis: Line2D
-var next_travel_node: TravelNode
+var next_travel_node_index: int
 
 func _ready() -> void:
 	pass
@@ -23,8 +23,9 @@ func _process(_delta: float) -> void:
 	
 func display_route():
 	route_vis.clear_points()
-	for keyframe in route:
-		route_vis.add_point(get_travel_node(keyframe).position)
+	route_vis.add_point(position)
+	for keyframe_index in range(next_travel_node_index, route.size()):
+		route_vis.add_point(get_travel_node(route[keyframe_index]).position)
 
 func travel(cur_time: float):
 	var keyframe_a
@@ -36,10 +37,8 @@ func travel(cur_time: float):
 			var travel_max_time = keyframe_b.time - keyframe_a.time
 			var travel_time = cur_time - keyframe_a.time
 			var travel_progress = travel_time / travel_max_time
-			var travel_node_a = get_travel_node(keyframe_a)
-			var travel_node_b = get_travel_node(keyframe_b)
-			next_travel_node = travel_node_b
-			position = lerp(travel_node_a.position,travel_node_b.position,travel_progress)
+			next_travel_node_index = keyframe_index + 1
+			position = lerp(get_travel_node(keyframe_a).position,get_travel_node(keyframe_b).position,travel_progress)
 			break
 
 func get_travel_node(keyframe: Keyframe) -> TravelNode:
