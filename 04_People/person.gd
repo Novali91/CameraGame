@@ -4,28 +4,23 @@ class_name Person
 
 @export var route: Array[Keyframe] = []
 var selected_from_person_editor: bool = false
-var route_vis: Line2D
 var next_travel_node_index: int
 
-func _ready() -> void:
-	pass
-
+#currently only for editor view
 func _process(_delta: float) -> void:
-	route_vis = get_node("../../Route Visualization") #yeah ik this is bad practice but I couldnt find any other way to do it in-editor
-	route_vis.visible = Engine.is_editor_hint()
+	var map = get_node("../..") as Map
+	map.route_vis.visible = Engine.is_editor_hint()
 	if Engine.is_editor_hint():
 		travel(PersonEditor.time)
 		if selected_from_person_editor:
-			display_route()
-	else:
-		travel(GameManager.recording_time)
+			display_route(map)
 	
-	
-func display_route():
-	route_vis.clear_points()
-	route_vis.add_point(position)
+#currently only for editor view
+func display_route(map: Map):
+	map.route_vis.clear_points()
+	map.route_vis.add_point(position)
 	for keyframe_index in range(next_travel_node_index, route.size()):
-		route_vis.add_point(get_travel_node(route[keyframe_index]).position)
+		map.route_vis.add_point(get_travel_node(route[keyframe_index]).position)
 
 func travel(cur_time: float):
 	var keyframe_a
