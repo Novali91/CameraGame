@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c08vlsgl8ea82"]
+
+[ext_resource type="Script" uid="uid://7j7r80sx0lyf" path="res://03_OS/01_Windows/os_window.gd" id="1_uxbqq"]
+
+[node name="OSWindow" type="Control" unique_id=1105901653]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_uxbqq")
