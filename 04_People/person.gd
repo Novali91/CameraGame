@@ -6,21 +6,17 @@ class_name Person
 var selected_from_person_editor: bool = false
 var next_travel_node_index: int
 
+var map: Map
+
 #currently only for editor view
 func _process(_delta: float) -> void:
-	var map = get_node("../..") as Map
+	map = get_node("../..") as Map #i know this is bad practice but it is for weird editor tool stuff
 	map.route_vis.visible = Engine.is_editor_hint()
 	if Engine.is_editor_hint():
 		travel(PersonEditor.time)
 		if selected_from_person_editor:
-			display_route(map)
-	
-#currently only for editor view
-func display_route(map: Map):
-	map.route_vis.clear_points()
-	map.route_vis.add_point(position)
-	for keyframe_index in range(next_travel_node_index, route.size()):
-		map.route_vis.add_point(get_travel_node(route[keyframe_index]).position)
+			map.route_vis.display(self)
+			pass
 
 func travel(cur_time: float):
 	var keyframe_a
@@ -35,6 +31,6 @@ func travel(cur_time: float):
 			next_travel_node_index = keyframe_index + 1
 			position = lerp(get_travel_node(keyframe_a).position,get_travel_node(keyframe_b).position,travel_progress)
 			break
-
+	
 func get_travel_node(keyframe: Keyframe) -> TravelNode:
 	return get_node(keyframe.travel_node_path) as TravelNode

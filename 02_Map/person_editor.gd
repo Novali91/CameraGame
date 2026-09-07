@@ -6,7 +6,6 @@ var window: Window
 var selected_person: Person
 var root: Node = EditorInterface.get_edited_scene_root()
 var people: Array[Person] = []
-var route_vis: Line2D = root.get_node("Route Visualization")
 static var time: float = 0
 
 func _run():
