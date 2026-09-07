@@ -50,9 +50,12 @@ travel_node_path = NodePath("../../Travel Nodes/LocA")
 time = 4.0
 narration = "wassup"
 
-[node name="Map" type="Node2D" unique_id=1922977521 node_paths=PackedStringArray("route_vis")]
+[node name="Map" type="Node2D" unique_id=1922977521 node_paths=PackedStringArray("route_vis", "cam", "people_node", "camera_locations_node")]
 script = ExtResource("1_mks04")
 route_vis = NodePath("RouteVisualization")
+cam = NodePath("Camera2D")
+people_node = NodePath("People")
+camera_locations_node = NodePath("Camera Locations")
 
 [node name="People" type="Node" parent="." unique_id=443070008]
 
@@ -103,3 +106,13 @@ speech_bubble = ExtResource("6_m81h6")
 
 [node name="Line" type="Line2D" parent="RouteVisualization" unique_id=1437924463]
 points = PackedVector2Array(564.44, 407.8, 211, 295, 805, 184, 256, 478)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=62318575]
+
+[node name="Camera Locations" type="Node" parent="." unique_id=1552811131]
+
+[node name="CamA" type="Marker2D" parent="Camera Locations" unique_id=227483236]
+position = Vector2(495, 310)
+
+[node name="CamB" type="Marker2D" parent="Camera Locations" unique_id=1360532646]
+position = Vector2(557, 579)
