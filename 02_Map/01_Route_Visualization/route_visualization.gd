@@ -14,7 +14,10 @@ func display(person: Person):
 	speech_bubbles.clear()
 	for keyframe_index in range(person.next_travel_node_index, person.route.size()):
 		var cur_keyframe = person.route[keyframe_index]
-		var travel_node_pos = person.get_travel_node(cur_keyframe).position
+		var travel_node = person.get_travel_node(cur_keyframe)
+		var travel_node_pos = Vector2.ZERO
+		if travel_node != null:
+			travel_node_pos = travel_node.position
 		line.add_point(travel_node_pos)
 		if cur_keyframe.narration != "":
 			var cur_bubble = speech_bubble.instantiate()

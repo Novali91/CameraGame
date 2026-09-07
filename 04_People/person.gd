@@ -33,4 +33,6 @@ func travel(cur_time: float):
 			break
 	
 func get_travel_node(keyframe: Keyframe) -> TravelNode:
+	if not keyframe.travel_node_path:
+		return null
 	return get_node(keyframe.travel_node_path) as TravelNode

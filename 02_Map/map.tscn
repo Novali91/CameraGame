@@ -29,6 +29,27 @@ script = ExtResource("3_6a3md")
 travel_node_path = NodePath("../../Travel Nodes/LocD")
 time = 7.5
 
+[sub_resource type="Resource" id="Resource_m81h6"]
+script = ExtResource("3_6a3md")
+travel_node_path = NodePath("../../Travel Nodes/LocD")
+time = 1.0
+
+[sub_resource type="Resource" id="Resource_12wv5"]
+script = ExtResource("3_6a3md")
+travel_node_path = NodePath("../../Travel Nodes/LocC")
+time = 2.0
+
+[sub_resource type="Resource" id="Resource_temgq"]
+script = ExtResource("3_6a3md")
+travel_node_path = NodePath("../../Travel Nodes/LocB")
+time = 3.0
+
+[sub_resource type="Resource" id="Resource_8gkpk"]
+script = ExtResource("3_6a3md")
+travel_node_path = NodePath("../../Travel Nodes/LocA")
+time = 4.0
+narration = "wassup"
+
 [node name="Map" type="Node2D" unique_id=1922977521 node_paths=PackedStringArray("route_vis")]
 script = ExtResource("1_mks04")
 route_vis = NodePath("RouteVisualization")
@@ -36,11 +57,12 @@ route_vis = NodePath("RouteVisualization")
 [node name="People" type="Node" parent="." unique_id=443070008]
 
 [node name="PersonA" parent="People" unique_id=738572913 instance=ExtResource("2_0kn42")]
-position = Vector2(475.70398, 379.48)
+position = Vector2(322.296, 330.52002)
 route = Array[ExtResource("3_6a3md")]([SubResource("Resource_shwjl"), SubResource("Resource_eakoi"), SubResource("Resource_8jrwq"), SubResource("Resource_gth8u")])
 
 [node name="PersonB" parent="People" unique_id=299382854 instance=ExtResource("2_0kn42")]
-position = Vector2(300, 0)
+position = Vector2(673.24, 254.56)
+route = Array[ExtResource("3_6a3md")]([SubResource("Resource_m81h6"), SubResource("Resource_12wv5"), SubResource("Resource_temgq"), SubResource("Resource_8gkpk")])
 
 [node name="PersonC" parent="People" unique_id=548292400 instance=ExtResource("2_0kn42")]
 position = Vector2(400, 0)
@@ -65,4 +87,4 @@ line = NodePath("Line")
 speech_bubble = ExtResource("6_m81h6")
 
 [node name="Line" type="Line2D" parent="RouteVisualization" unique_id=1437924463]
-points = PackedVector2Array(475.70398, 379.48, 211, 295, 805, 184, 256, 478)
+points = PackedVector2Array(322.296, 330.52002, 211, 295, 805, 184, 256, 478)
