@@ -8,6 +8,13 @@ var next_travel_node_index: int
 
 var map: Map
 
+@export var portrait: Texture2D
+@export var description: String
+@export var age: int
+@export var sex: String
+@export var height: int
+@export var weight: int
+
 #currently only for editor view
 func _process(_delta: float) -> void:
 	map = get_node("../..") as Map #i know this is bad practice but it is for weird editor tool stuff
@@ -36,3 +43,7 @@ func get_travel_node(keyframe: Keyframe) -> TravelNode:
 	if not keyframe.travel_node_path:
 		return null
 	return get_node(keyframe.travel_node_path) as TravelNode
+
+
+func _on_button_pressed() -> void:
+	print("Person details:" + name + " " + description + " " + str(age) + " " + sex + " " + str(height) + " " + str(weight))

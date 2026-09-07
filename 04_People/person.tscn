@@ -5,6 +5,18 @@
 
 [node name="Person" type="Node2D" unique_id=738572913]
 script = ExtResource("1_hncb1")
+description = null
+age = null
+sex = null
+height = null
+weight = null
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1046029902]
-texture = ExtResource("1_0pife")
+[node name="Button" type="Button" parent="." unique_id=1529186246]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_0pife")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
