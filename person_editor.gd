@@ -7,6 +7,7 @@ var selected_person: Person
 var root: Node = EditorInterface.get_edited_scene_root()
 var people: Array[Person] = []
 var route_vis: Line2D = root.get_node("Route Visualization")
+static var time: float = 0
 
 func _run():
 	window = Window.new()
@@ -35,9 +36,15 @@ func _run():
 	person_selector.position.y = 50
 	window.add_child(person_selector)
 	
-	selected_person.get_travel_node(selected_person.route[0])
-	#for keyframe in selected_person.route:
-	#	route_vis.add_point(Person.ge)
+	var time_slider = HSlider.new()
+	time_slider.value_changed.connect(set_time)
+	time_slider.position.y = 100
+	time_slider.size.x = 100
+	time_slider.min_value = 0
+	time_slider.max_value = 10 #kind random enpoint idk, change later
+	time_slider.step = 0.01
+	window.add_child(time_slider)
+	
 		
 func add_keyframe():
 	var temp = selected_person.route.duplicate()
@@ -49,3 +56,6 @@ func select_person(index: int):
 	selected_person.selected_from_person_editor = false
 	selected_person = people[index]
 	selected_person.selected_from_person_editor = true
+
+func set_time(time: float):
+	self.time = time
