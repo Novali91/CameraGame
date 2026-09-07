@@ -1,7 +1,7 @@
 extends Node
 class_name Map
 var recording_time: float = 0 #temporary, pass this value in later
-@export var route_vis: Line2D
+@export var route_vis: RouteVisualization
 var people: Array[Person] = []
 
 func _ready() -> void:

@@ -1,23 +1,28 @@
 [gd_scene format=3 uid="uid://el2nfg1fydul"]
 
-[ext_resource type="Script" uid="uid://c8nk6u4sq2p7h" path="res://02_Managers/map.gd" id="1_mks04"]
+[ext_resource type="Script" uid="uid://c8nk6u4sq2p7h" path="res://02_Map/map.gd" id="1_mks04"]
 [ext_resource type="PackedScene" uid="uid://bvu7gak4r5ofl" path="res://04_People/person.tscn" id="2_0kn42"]
 [ext_resource type="Script" uid="uid://bkeuiiag2pumx" path="res://04_People/01_Navigation/keyframe.gd" id="3_6a3md"]
 [ext_resource type="PackedScene" uid="uid://c8g7ccgaq1gjr" path="res://04_People/01_Navigation/travel_node.tscn" id="4_nlxlw"]
+[ext_resource type="Script" uid="uid://bvg6wxhxd6eh" path="res://02_Map/01_Route_Visualization/route_visualization.gd" id="5_0kn42"]
+[ext_resource type="PackedScene" uid="uid://c0w84j5tl2i0n" path="res://02_Map/01_Route_Visualization/speech_bubble.tscn" id="6_m81h6"]
 
 [sub_resource type="Resource" id="Resource_shwjl"]
 script = ExtResource("3_6a3md")
 travel_node_path = NodePath("../../Travel Nodes/LocA")
+narration = "yo"
 
 [sub_resource type="Resource" id="Resource_eakoi"]
 script = ExtResource("3_6a3md")
 travel_node_path = NodePath("../../Travel Nodes/LocB")
 time = 2.5
+narration = "hello"
 
 [sub_resource type="Resource" id="Resource_8jrwq"]
 script = ExtResource("3_6a3md")
 travel_node_path = NodePath("../../Travel Nodes/LocC")
 time = 5.0
+narration = "bye"
 
 [sub_resource type="Resource" id="Resource_gth8u"]
 script = ExtResource("3_6a3md")
@@ -26,12 +31,12 @@ time = 7.5
 
 [node name="Map" type="Node2D" unique_id=1922977521 node_paths=PackedStringArray("route_vis")]
 script = ExtResource("1_mks04")
-route_vis = NodePath("Route Visualization")
+route_vis = NodePath("RouteVisualization")
 
 [node name="People" type="Node" parent="." unique_id=443070008]
 
 [node name="PersonA" parent="People" unique_id=738572913 instance=ExtResource("2_0kn42")]
-position = Vector2(520.824, 393.88)
+position = Vector2(475.70398, 379.48)
 route = Array[ExtResource("3_6a3md")]([SubResource("Resource_shwjl"), SubResource("Resource_eakoi"), SubResource("Resource_8jrwq"), SubResource("Resource_gth8u")])
 
 [node name="PersonB" parent="People" unique_id=299382854 instance=ExtResource("2_0kn42")]
@@ -54,5 +59,10 @@ position = Vector2(805, 184)
 [node name="LocD" parent="Travel Nodes" unique_id=1978150333 instance=ExtResource("4_nlxlw")]
 position = Vector2(256, 478)
 
-[node name="Route Visualization" type="Line2D" parent="." unique_id=1438070625]
-points = PackedVector2Array(520.824, 393.88, 211, 295, 805, 184, 256, 478)
+[node name="RouteVisualization" type="Node2D" parent="." unique_id=821729632 node_paths=PackedStringArray("line")]
+script = ExtResource("5_0kn42")
+line = NodePath("Line")
+speech_bubble = ExtResource("6_m81h6")
+
+[node name="Line" type="Line2D" parent="RouteVisualization" unique_id=1437924463]
+points = PackedVector2Array(475.70398, 379.48, 211, 295, 805, 184, 256, 478)

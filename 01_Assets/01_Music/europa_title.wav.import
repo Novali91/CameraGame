@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://co82toign2ltd"
-path="res://.godot/imported/europa_title.wav-10409a91a5c736bca1fde4ed7f351a30.sample"
+path="res://.godot/imported/europa_title.wav-83999ff8e0d0677b7d7d4da25fde5d02.sample"
 
 [deps]
 
-source_file="res://01_Assets/music/europa_title.wav"
-dest_files=["res://.godot/imported/europa_title.wav-10409a91a5c736bca1fde4ed7f351a30.sample"]
+source_file="res://01_Assets/01_Music/europa_title.wav"
+dest_files=["res://.godot/imported/europa_title.wav-83999ff8e0d0677b7d7d4da25fde5d02.sample"]
 
 [params]
 
