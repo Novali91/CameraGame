@@ -8,15 +8,16 @@ var taskbar_icons: Array[Button] = []
 @export var taskbar_icon_spacing: float
 
 func add_window(window_scene: PackedScene, taskbar_icon_scene: PackedScene):
-	var window = window_scene.instantiate()
+	var window = window_scene.instantiate() as OSWindow
 	add_child(window)
 	window.owner = self
 	windows.append(window)
 	
-	var taskbar_icon = taskbar_icon_scene.instantiate()
+	var taskbar_icon = taskbar_icon_scene.instantiate() as TaskbarIcon
 	taskbar.add_child(taskbar_icon)
 	taskbar_icon.owner = taskbar
 	taskbar_icons.append(taskbar_icon)
+	taskbar_icon.window = window
 	order_taskbar()
 
 func order_taskbar():
