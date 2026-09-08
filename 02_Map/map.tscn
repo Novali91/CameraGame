@@ -6,23 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://c8g7ccgaq1gjr" path="res://04_People/01_Navigation/travel_node.tscn" id="4_nlxlw"]
 [ext_resource type="Script" uid="uid://bvg6wxhxd6eh" path="res://02_Map/01_Route_Visualization/route_visualization.gd" id="5_0kn42"]
 [ext_resource type="PackedScene" uid="uid://c0w84j5tl2i0n" path="res://02_Map/01_Route_Visualization/speech_bubble.tscn" id="6_m81h6"]
+[ext_resource type="PackedScene" uid="uid://cssi8g4355xoj" path="res://04_People/01_Navigation/conversation.tscn" id="7_12wv5"]
+[ext_resource type="Script" uid="uid://d3k1q53qepbfn" path="res://04_People/01_Navigation/dialogue_line.gd" id="8_temgq"]
 
 [sub_resource type="Resource" id="Resource_shwjl"]
 script = ExtResource("3_6a3md")
 travel_node_path = NodePath("../../Travel Nodes/LocA")
-narration = "yo"
 
 [sub_resource type="Resource" id="Resource_eakoi"]
 script = ExtResource("3_6a3md")
 travel_node_path = NodePath("../../Travel Nodes/LocB")
 time = 1.9734234619140625
-narration = "hello"
 
 [sub_resource type="Resource" id="Resource_8jrwq"]
 script = ExtResource("3_6a3md")
 travel_node_path = NodePath("../../Travel Nodes/LocC")
 time = 4.994834594726562
-narration = "bye"
 
 [sub_resource type="Resource" id="Resource_gth8u"]
 script = ExtResource("3_6a3md")
@@ -48,19 +47,31 @@ time = 5.4619921875
 script = ExtResource("3_6a3md")
 travel_node_path = NodePath("../../Travel Nodes/LocA")
 time = 6.897209250710227
-narration = "wassup"
 
-[node name="Map" type="Node2D" unique_id=1922977521 node_paths=PackedStringArray("route_vis", "cam", "people_node", "camera_locations_node")]
+[sub_resource type="Resource" id="Resource_2iucv"]
+script = ExtResource("8_temgq")
+speaker = NodePath("../../People/PersonC")
+time = 4.0
+metadata/_custom_type_script = "uid://d3k1q53qepbfn"
+
+[sub_resource type="Resource" id="Resource_p83x3"]
+script = ExtResource("8_temgq")
+speaker = NodePath("../../People/PersonB")
+time = 8.0
+metadata/_custom_type_script = "uid://d3k1q53qepbfn"
+
+[node name="Map" type="Node2D" unique_id=1922977521 node_paths=PackedStringArray("route_vis", "cam", "people_node", "camera_locations_node", "conversations_node")]
 script = ExtResource("1_mks04")
 route_vis = NodePath("RouteVisualization")
 cam = NodePath("Camera2D")
 people_node = NodePath("People")
 camera_locations_node = NodePath("Camera Locations")
+conversations_node = NodePath("Conversations")
 
 [node name="People" type="Node" parent="." unique_id=443070008]
 
 [node name="PersonA" parent="People" unique_id=738572913 instance=ExtResource("2_0kn42")]
-position = Vector2(558.4202, 405.87878)
+position = Vector2(259.2904, 476.2379)
 route = Array[ExtResource("3_6a3md")]([SubResource("Resource_shwjl"), SubResource("Resource_eakoi"), SubResource("Resource_8jrwq"), SubResource("Resource_gth8u")])
 description = ""
 age = 0
@@ -69,8 +80,8 @@ height = 0
 weight = 0
 speed = 200.0
 
-[node name="PersonB" parent="People" unique_id=299382854 instance=ExtResource("2_0kn42")]
-position = Vector2(299.6368, 454.63165)
+[node name="PersonB" parent="People" unique_id=299382854 node_paths=PackedStringArray("conversations") instance=ExtResource("2_0kn42")]
+position = Vector2(553.6736, 404.3639)
 route = Array[ExtResource("3_6a3md")]([SubResource("Resource_m81h6"), SubResource("Resource_12wv5"), SubResource("Resource_temgq"), SubResource("Resource_8gkpk")])
 description = ""
 age = 0
@@ -78,8 +89,9 @@ sex = ""
 height = 0
 weight = 0
 speed = 275.0
+conversations = [NodePath("../../Conversations/ConversationA")]
 
-[node name="PersonC" parent="People" unique_id=548292400 instance=ExtResource("2_0kn42")]
+[node name="PersonC" parent="People" unique_id=548292400 node_paths=PackedStringArray("conversations") instance=ExtResource("2_0kn42")]
 position = Vector2(400, 0)
 description = ""
 age = 0
@@ -87,6 +99,7 @@ sex = ""
 height = 0
 weight = 0
 speed = 3.0
+conversations = [NodePath("../../Conversations/ConversationA")]
 
 [node name="Travel Nodes" type="Node" parent="." unique_id=1545301525]
 
@@ -108,7 +121,7 @@ line = NodePath("Line")
 speech_bubble = ExtResource("6_m81h6")
 
 [node name="Line" type="Line2D" parent="RouteVisualization" unique_id=1437924463]
-points = PackedVector2Array(558.4202, 405.87878, 211, 295, 805, 184, 256, 478)
+points = PackedVector2Array(553.6736, 404.3639, 587, 415)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=62318575]
 
@@ -119,3 +132,10 @@ position = Vector2(472, 311)
 
 [node name="CamB" type="Marker2D" parent="Camera Locations" unique_id=1360532646]
 position = Vector2(557, 579)
+
+[node name="Conversations" type="Node" parent="." unique_id=1820263092]
+
+[node name="ConversationA" parent="Conversations" unique_id=2052112119 instance=ExtResource("7_12wv5")]
+lines = Array[ExtResource("8_temgq")]([SubResource("Resource_2iucv"), SubResource("Resource_p83x3")])
+start_time = 4.0
+end_time = 8.0

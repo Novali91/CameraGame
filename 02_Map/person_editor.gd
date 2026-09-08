@@ -61,6 +61,12 @@ func _run():
 	fill_speed_button.text = "Fill speed"
 	fill_speed_button.pressed.connect(fill_speed)
 	
+	var update_conversations_button = Button.new()
+	window.add_child(update_conversations_button)
+	update_conversations_button.pressed.connect(update_conversations)
+	update_conversations_button.position.y = 250
+	update_conversations_button.text = "Update conversations"
+	
 func add_keyframe():
 	var temp = selected_person.route.duplicate()
 	var kf: Keyframe = Keyframe.new()
@@ -81,3 +87,13 @@ func fill_speed():
 		var prev_kf = selected_person.route[keyframe_index-1]
 		var dist = (selected_person.get_travel_node(cur_kf).position - selected_person.get_travel_node(prev_kf).position).length()
 		cur_kf.time = prev_kf.time + dist / selected_person.speed
+
+func update_conversations():
+	for person in people:
+		person.conversations.clear()
+	var conversation_nodes = root.get_node("Conversations").get_children()
+	for conversation_node in conversation_nodes:
+		var conversation = conversation_node as Conversation
+		conversation.update()
+		for participant in conversation.participants:
+			participant.conversations.append(conversation)

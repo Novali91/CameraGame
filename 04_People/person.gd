@@ -17,6 +17,9 @@ var map: Map
 
 @export var speed: float
 
+@export var conversations: Array[Conversation]
+var active_conversation: Conversation
+
 #currently only for editor view
 func _process(_delta: float) -> void:
 	map = get_node("../..") as Map #i know this is bad practice but it is for weird editor tool stuff
@@ -28,6 +31,7 @@ func _process(_delta: float) -> void:
 			pass
 
 func travel(cur_time: float):
+	update_active_conversation(cur_time)
 	var keyframe_a
 	var keyframe_b
 	for keyframe_index in range(route.size()-1):
@@ -40,12 +44,22 @@ func travel(cur_time: float):
 			next_travel_node_index = keyframe_index + 1
 			position = lerp(get_travel_node(keyframe_a).position,get_travel_node(keyframe_b).position,travel_progress)
 			break
-	
+
+func update_active_conversation(cur_time: float):
+	if active_conversation != null:
+		if cur_time < active_conversation.start_time or cur_time > active_conversation.end_time:
+			active_conversation = null
+	else:
+		for conversation in conversations:
+			if cur_time >= conversation.start_time and cur_time <= conversation.end_time:
+				active_conversation = conversation
+				break
+
 func get_travel_node(keyframe: Keyframe) -> TravelNode:
 	if not keyframe.travel_node_path:
 		return null
 	return get_node(keyframe.travel_node_path) as TravelNode
 
-
 func _on_button_pressed() -> void:
 	print("Person details:" + name + " " + description + " " + str(age) + " " + sex + " " + str(height) + " " + str(weight))
+	print("Conversation: " + str(active_conversation))

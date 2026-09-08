@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cssi8g4355xoj"]
+
+[ext_resource type="Script" uid="uid://868lrihrvpag" path="res://04_People/01_Navigation/conversation.gd" id="1_876gu"]
+
+[node name="Conversation" type="Node" unique_id=2052112119]
+script = ExtResource("1_876gu")

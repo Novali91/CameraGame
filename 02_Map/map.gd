@@ -5,8 +5,10 @@ var recording_time: float = 0 #temporary, pass this value in later
 @export var cam: Camera2D
 @export var people_node: Node
 @export var camera_locations_node: Node
+@export var conversations_node: Node
 var people: Array[Person] = []
 var camera_locations: Array[Marker2D] = []
+var conversations: Array[Conversation] = []
 
 func _ready() -> void:
 	var people_nodes = people_node.get_children()
@@ -15,6 +17,11 @@ func _ready() -> void:
 	var camera_locations_nodes = camera_locations_node.get_children()
 	for camera_location_node in camera_locations_nodes:
 		camera_locations.append(camera_location_node as Marker2D)
+	for conversation_node in conversations_node.get_children():
+		conversations.append(conversation_node as Conversation)
+	for person in people:
+		for conversation in person.conversations:
+			conversation.update()
 
 #temporary. Should be passed in by OS instead
 func _process(delta: float) -> void:
