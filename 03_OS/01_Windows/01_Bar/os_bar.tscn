@@ -7,8 +7,8 @@
 [ext_resource type="Script" uid="uid://pop1p57pehlr" path="res://03_OS/01_Windows/01_Bar/01_Buttons/close.gd" id="5_csmlv"]
 
 [node name="OSBar" type="PanelContainer" unique_id=2124201171]
-offset_right = 212.0
-offset_bottom = 32.0
+offset_right = 150.0
+offset_bottom = 23.0
 script = ExtResource("1_t0t7v")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1031264196]
@@ -17,29 +17,29 @@ size_flags_vertical = 0
 theme_override_constants/separation = 8
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1853550128]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(20, 18)
 layout_mode = 2
 texture = ExtResource("2_vbvhy")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1747342056]
-custom_minimum_size = Vector2(48, 32)
+custom_minimum_size = Vector2(32, 18)
 layout_mode = 2
 text = "Title"
 vertical_alignment = 1
 
 [node name="Control" type="Control" parent="HBoxContainer" unique_id=1812627312]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1872948667]
-custom_minimum_size = Vector2(108, 32)
+custom_minimum_size = Vector2(72, 20)
 layout_mode = 2
 theme_override_constants/separation = 6
 
 [node name="Minimize" type="TextureButton" parent="HBoxContainer/HBoxContainer" unique_id=1062393805]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(20, 18)
 layout_mode = 2
 texture_normal = ExtResource("2_vbvhy")
 ignore_texture_size = true
@@ -47,7 +47,7 @@ stretch_mode = 0
 script = ExtResource("3_7v5ng")
 
 [node name="Maximize" type="TextureButton" parent="HBoxContainer/HBoxContainer" unique_id=778596231]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(20, 18)
 layout_mode = 2
 texture_normal = ExtResource("2_vbvhy")
 ignore_texture_size = true
@@ -55,7 +55,7 @@ stretch_mode = 0
 script = ExtResource("4_anu4y")
 
 [node name="Close" type="TextureButton" parent="HBoxContainer/HBoxContainer" unique_id=1416862761]
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(20, 18)
 layout_mode = 2
 texture_normal = ExtResource("2_vbvhy")
 ignore_texture_size = true

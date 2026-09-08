@@ -1,32 +1,40 @@
 [gd_scene format=3 uid="uid://c08vlsgl8ea82"]
 
 [ext_resource type="Script" uid="uid://7j7r80sx0lyf" path="res://03_OS/01_Windows/os_window.gd" id="1_uxbqq"]
+[ext_resource type="Script" uid="uid://brukipraf4dcn" path="res://03_OS/01_Windows/resize_margins.gd" id="2_c3efw"]
 [ext_resource type="PackedScene" uid="uid://bunmb3p2ikbb6" path="res://03_OS/01_Windows/01_Bar/os_bar.tscn" id="2_ttbdv"]
 
 [node name="OSWindow" type="Control" unique_id=1105901653]
+custom_minimum_size = Vector2(180, 180)
 layout_mode = 3
 anchors_preset = 0
+offset_right = 180.0
+offset_bottom = 180.0
 script = ExtResource("1_uxbqq")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=776590632]
-custom_minimum_size = Vector2(200, 200)
-layout_mode = 0
-offset_right = 329.0
-offset_bottom = 200.0
+[node name="Window" type="PanelContainer" parent="." unique_id=776590632]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=361568993]
+[node name="ResizeMargins" type="MarginContainer" parent="Window" unique_id=361568993]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("2_c3efw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1863261995]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/ResizeMargins" unique_id=1863261995]
 layout_mode = 2
 
-[node name="OSBar" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2124201171 instance=ExtResource("2_ttbdv")]
+[node name="OSBar" parent="Window/ResizeMargins/VBoxContainer" unique_id=2124201171 instance=ExtResource("2_ttbdv")]
 layout_mode = 2
 
-[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1112528772]
+[node name="Control" type="Control" parent="Window/ResizeMargins/VBoxContainer" unique_id=1112528772]
 layout_mode = 2
 size_flags_vertical = 3

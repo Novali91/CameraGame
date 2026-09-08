@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://lvqq5h2wxe8o"]
 
+[ext_resource type="PackedScene" uid="uid://c08vlsgl8ea82" path="res://03_OS/01_Windows/os_window.tscn" id="1_dyt3q"]
+
 [node name="Joeytest!" type="Node" unique_id=1082100729]
+
+[node name="OSWindow" parent="." unique_id=1105901653 instance=ExtResource("1_dyt3q")]
