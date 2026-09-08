@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c313r1hf01g2d" path="res://03_OS/01_Windows/01_Bar/os_bar.gd" id="1_t0t7v"]
 [ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="2_vbvhy"]
 [ext_resource type="Script" uid="uid://d1qo5loi53c3p" path="res://03_OS/01_Windows/01_Bar/01_Buttons/minimize.gd" id="3_7v5ng"]
+[ext_resource type="Script" uid="uid://dgfmw513joq10" path="res://03_OS/01_Windows/01_Bar/blank.gd" id="3_anu4y"]
 [ext_resource type="Script" uid="uid://cly2oejkpx380" path="res://03_OS/01_Windows/01_Bar/01_Buttons/maximize.gd" id="4_anu4y"]
 [ext_resource type="Script" uid="uid://pop1p57pehlr" path="res://03_OS/01_Windows/01_Bar/01_Buttons/close.gd" id="5_csmlv"]
 
@@ -28,10 +29,11 @@ layout_mode = 2
 text = "Title"
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="HBoxContainer" unique_id=1812627312]
+[node name="Blank" type="Control" parent="HBoxContainer" unique_id=1812627312]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
+script = ExtResource("3_anu4y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1872948667]
 custom_minimum_size = Vector2(72, 20)

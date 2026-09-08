@@ -43,14 +43,18 @@ func _ready() -> void:
 	_os_bar.maximize_pressed.connect(_maximize)
 	_resize_margins.clicked.connect(_check_resize)
 	_resize_margins.unclicked.connect(_unresize)
+	_os_bar.clicked.connect(_bar_pressed)
+	_os_bar.unclicked.connect(_bar_unpressed)
 	pass
 
 
 func _physics_process(delta: float) -> void:
+	var delta_mouse_pos = get_global_mouse_position() - _last_mouse_pos
 	if _resizing:
-		var delta_mouse_pos = get_global_mouse_position() - _last_mouse_pos
 		_resize(delta_mouse_pos)
-	
+	elif _dragging:
+		_drag(delta_mouse_pos)
+		
 	_last_mouse_pos = get_global_mouse_position()
 	pass
 
@@ -168,3 +172,20 @@ func _resize(delta_mouse: Vector2) -> void:
 			size.x += delta_mouse.x
 			size.y += delta_mouse.y
 	pass
+
+## For the bar movement
+
+func _bar_pressed(pos: Vector2) -> void:
+	
+	_dragging = true
+	
+	pass
+
+func _bar_unpressed() -> void:
+	
+	_dragging = false
+	
+	pass
+
+func _drag(delta_mouse: Vector2) -> void:
+	global_position += delta_mouse
