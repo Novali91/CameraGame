@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0w84j5tl2i0n"]
 
-[ext_resource type="Texture2D" uid="uid://d0lc64quicdgo" path="res://01_Assets/02_Icons/speech-bubble-png-0.png" id="1_25dmm"]
+[ext_resource type="Texture2D" uid="uid://d0lc64quicdgo" path="res://01_Assets/02_Icons/speech_bubble_temp.png" id="1_25dmm"]
 
 [node name="SpeechBubble" type="Sprite2D" unique_id=1491152809]
 scale = Vector2(0.09958506, 0.099585064)

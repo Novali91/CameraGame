@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cas8iltxmmus"]
+
+[ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="1_fpejj"]
+[ext_resource type="Script" uid="uid://c1f06dmdh75as" path="res://03_OS/02_Desktop/app_shortcut.gd" id="1_y0vea"]
+
+[node name="AppShortcut" type="Node2D" unique_id=1949483686]
+script = ExtResource("1_y0vea")
+
+[node name="Button" type="Button" parent="." unique_id=2009657129]
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_fpejj")
+
+[node name="Label" type="Label" parent="Button" unique_id=1844243870]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.5
+offset_top = -23.0
+offset_right = 59.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "App name here"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

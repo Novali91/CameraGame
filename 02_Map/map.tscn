@@ -50,12 +50,14 @@ time = 6.897209250710227
 
 [sub_resource type="Resource" id="Resource_2iucv"]
 script = ExtResource("8_temgq")
+content = "hello"
 speaker = NodePath("../../People/PersonC")
 time = 4.0
 metadata/_custom_type_script = "uid://d3k1q53qepbfn"
 
 [sub_resource type="Resource" id="Resource_p83x3"]
 script = ExtResource("8_temgq")
+content = "yo"
 speaker = NodePath("../../People/PersonB")
 time = 8.0
 metadata/_custom_type_script = "uid://d3k1q53qepbfn"

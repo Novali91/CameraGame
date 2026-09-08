@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cxrwk06u4ajvg"]
+
+[node name="Taskbar" type="Node2D" unique_id=1126105626]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1912218872]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 0.28627452)
