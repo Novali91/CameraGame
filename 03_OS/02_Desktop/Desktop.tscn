@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b1bipim1ki3ou" path="res://03_OS/02_Desktop/desktop.gd" id="1_3eq2a"]
 [ext_resource type="Texture2D" uid="uid://d4a1ba5ysol6u" path="res://01_Assets/02_Icons/desktop_background_temp.jpeg" id="1_l22os"]
-[ext_resource type="PackedScene" uid="uid://cas8iltxmmus" path="res://03_OS/02_Desktop/app_shortcut.tscn" id="2_q7grr"]
-[ext_resource type="PackedScene" uid="uid://c08vlsgl8ea82" path="res://03_OS/01_Windows/os_window.tscn" id="3_suuki"]
-[ext_resource type="PackedScene" uid="uid://w6yu1ctw8o6e" path="res://03_OS/02_Desktop/taskbar_icon.tscn" id="5_1va7b"]
 
 [node name="Desktop" type="Node2D" unique_id=1463141510]
 script = ExtResource("1_3eq2a")
@@ -27,7 +24,3 @@ offset_bottom = 650.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 0.43137255)
-
-[node name="AppShortcut" parent="." unique_id=1949483686 instance=ExtResource("2_q7grr")]
-window_scene = ExtResource("3_suuki")
-taskbar_icon_scene = ExtResource("5_1va7b")

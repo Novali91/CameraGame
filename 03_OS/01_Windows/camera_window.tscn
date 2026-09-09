@@ -12,7 +12,7 @@ class_name CameraWindow
 @onready var time_slider: HSlider = $Window/ResizeMargins/VBoxContainer/Control/TimeSlider as HSlider
 
 func _process(_delta: float) -> void:
-	map.recording_time = time_slider.value
+	map.play(time_slider.value,0) #second parameter is camera index
 "
 
 [node name="CameraWindow" type="Control" unique_id=1105901653]
@@ -80,3 +80,4 @@ anchor_bottom = 1.0
 offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+max_value = 15.0

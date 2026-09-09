@@ -1,6 +1,5 @@
 extends Node
 class_name Map
-var recording_time: float = 0 #temporary, pass this value in later
 @export var route_vis: RouteVisualization
 @export var cam: Camera2D
 @export var people_node: Node
@@ -22,11 +21,6 @@ func _ready() -> void:
 	for person in people:
 		for conversation in person.conversations:
 			conversation.update()
-
-#temporary. Should be passed in by OS instead
-func _process(delta: float) -> void:
-	recording_time += delta
-	play(recording_time, 0)
 
 func play(time: float, cam_id: int) -> void:
 	cam.position = camera_locations[cam_id].position
