@@ -46,10 +46,9 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				print("Hi")
+				
 				clicked.emit(get_global_mouse_position())
 			else:
-				print("Bye")
 				unclicked.emit()
 
 func _bar_pressed(pos: Vector2) -> void:

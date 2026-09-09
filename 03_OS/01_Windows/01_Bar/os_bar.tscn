@@ -26,6 +26,7 @@ expand_mode = 1
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1747342056]
 custom_minimum_size = Vector2(32, 18)
 layout_mode = 2
+mouse_filter = 1
 text = "Title"
 vertical_alignment = 1
 
@@ -33,6 +34,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 script = ExtResource("3_anu4y")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1872948667]

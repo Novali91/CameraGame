@@ -37,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="ResizeMargins" type="MarginContainer" parent="Window" unique_id=361568993]
 layout_mode = 2
@@ -51,6 +52,7 @@ layout_mode = 2
 
 [node name="OSBar" parent="Window/ResizeMargins/VBoxContainer" unique_id=2124201171 instance=ExtResource("3_ki0qp")]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Control" type="Control" parent="Window/ResizeMargins/VBoxContainer" unique_id=1112528772]
 layout_mode = 2
@@ -87,9 +89,11 @@ anchor_bottom = 1.0
 offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 1
 max_value = 15.0
 
 [node name="CameraSelector" type="OptionButton" parent="Window/ResizeMargins/VBoxContainer/Control" unique_id=1738741948]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 20.0
+mouse_filter = 1
