@@ -7,9 +7,9 @@ var window: OSWindow
 
 func _on_mouse_entered() -> void:
 	label.visible = true
-	
+
 func _on_mouse_exited() -> void:
 	label.visible = false
 
 func _on_pressed() -> void:
-	print(window)
+	window.selected()

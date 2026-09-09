@@ -12,12 +12,15 @@ func add_window(window_scene: PackedScene, taskbar_icon_scene: PackedScene):
 	add_child(window)
 	window.owner = self
 	windows.append(window)
+	window.desktop = self
 	
 	var taskbar_icon = taskbar_icon_scene.instantiate() as TaskbarIcon
 	taskbar.add_child(taskbar_icon)
 	taskbar_icon.owner = taskbar
 	taskbar_icons.append(taskbar_icon)
 	taskbar_icon.window = window
+	taskbar_icon.desktop = self
+	window.taskbar_icon = taskbar_icon
 	order_taskbar()
 
 func order_taskbar():
@@ -25,3 +28,10 @@ func order_taskbar():
 		var taskbar_icon = taskbar_icons[icon_index]
 		taskbar_icon.position.y = 15 #magic number idc man
 		taskbar_icon.position.x = icon_index * taskbar_icon_spacing
+
+func window_closed(window: OSWindow):
+	####something here
+	taskbar_icons.erase(window.taskbar_icon)
+	windows.erase(window)
+	window.taskbar_icon.queue_free()
+	order_taskbar()
