@@ -1,4 +1,4 @@
-extends Button
+extends Control
 class_name TaskbarIcon
 
 @onready var label: Label = $Label

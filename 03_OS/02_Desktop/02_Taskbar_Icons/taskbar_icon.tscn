@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://w6yu1ctw8o6e"]
+
+[ext_resource type="Script" uid="uid://yvmo6ms0w56s" path="res://03_OS/02_Desktop/02_Taskbar_Icons/taskbar_icon.gd" id="1_1i7ix"]
+[ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="2_nwcm1"]
+
+[node name="TaskbarIcon" type="Control" unique_id=1805623024]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -526.0
+offset_bottom = -274.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1i7ix")
+
+[node name="Label" type="Label" parent="." unique_id=508001607]
+visible = false
+layout_mode = 0
+offset_left = -1.0
+offset_top = -11.0
+offset_right = 51.0
+theme_override_font_sizes/font_size = 7
+text = "App name here"
+horizontal_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=534047639]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="AspectRatioContainer" unique_id=293982635]
+layout_mode = 2
+texture_normal = ExtResource("2_nwcm1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="AspectRatioContainer/TextureButton" to="." method="_on_pressed"]

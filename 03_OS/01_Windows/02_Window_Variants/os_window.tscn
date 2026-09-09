@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c08vlsgl8ea82"]
 
-[ext_resource type="Script" uid="uid://7j7r80sx0lyf" path="res://03_OS/01_Windows/os_window.gd" id="1_uxbqq"]
+[ext_resource type="Script" uid="uid://7j7r80sx0lyf" path="res://03_OS/01_Windows/02_Window_Variants/os_window.gd" id="1_uxbqq"]
 [ext_resource type="Script" uid="uid://brukipraf4dcn" path="res://03_OS/01_Windows/resize_margins.gd" id="2_c3efw"]
 [ext_resource type="PackedScene" uid="uid://bunmb3p2ikbb6" path="res://03_OS/01_Windows/01_Bar/os_bar.tscn" id="2_ttbdv"]
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cas8iltxmmus"]
 
 [ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="1_fpejj"]
-[ext_resource type="Script" uid="uid://c1f06dmdh75as" path="res://03_OS/02_Desktop/app_shortcut.gd" id="1_y0vea"]
+[ext_resource type="Script" uid="uid://c1f06dmdh75as" path="res://03_OS/02_Desktop/01_App_Shortcuts/app_shortcut.gd" id="1_y0vea"]
 
 [node name="AppShortcut" type="Node2D" unique_id=1949483686]
 script = ExtResource("1_y0vea")

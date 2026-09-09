@@ -3,7 +3,7 @@ class_name Desktop
 
 @onready var taskbar = $Taskbar
 var windows: Array[OSWindow] = []
-var taskbar_icons: Array[Button] = []
+var taskbar_icons: Array[TaskbarIcon] = []
 
 @export var taskbar_icon_spacing: float
 
