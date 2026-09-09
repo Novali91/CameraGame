@@ -17,6 +17,7 @@ const TOP: int = 4
 @onready var _vert_cursor = preload("res://01_Assets/02_Icons/vertical_cursor.png")
 @onready var _bl_cursor = preload("res://01_Assets/02_Icons/bottom_left_cursor.png")
 @onready var _br_cursor = preload("res://01_Assets/02_Icons/bottom_right_cursor.png")
+@onready var _default_cursor = preload("res://01_Assets/02_Icons/default_cursor.png")
 
 var _reset_cursor: bool = false
 var desktop: Desktop
@@ -252,7 +253,7 @@ func _unhover_resize_handles() -> void:
 		_reset_cursor = true
 		return
 	
-	DisplayServer.cursor_set_custom_image(null)
+	DisplayServer.cursor_set_custom_image(_default_cursor)
 	
 	pass
 
