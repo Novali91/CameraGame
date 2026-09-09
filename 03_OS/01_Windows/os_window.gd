@@ -13,6 +13,13 @@ const TOP: int = 4
 @onready var _window = $Window
 @onready var _resize_margins: MarginContainer = $Window/ResizeMargins
 
+@onready var _hori_cursor = preload("res://01_Assets/02_Icons/side_cursor.png")
+@onready var _vert_cursor = preload("res://01_Assets/02_Icons/vertical_cursor.png")
+@onready var _bl_cursor = preload("res://01_Assets/02_Icons/bottom_left_cursor.png")
+@onready var _br_cursor = preload("res://01_Assets/02_Icons/bottom_right_cursor.png")
+
+var _reset_cursor: bool = false
+
 enum ResizeLocation {
 	TOP,
 	LEFT,
@@ -45,6 +52,8 @@ func _ready() -> void:
 	_resize_margins.unclicked.connect(_unresize)
 	_os_bar.clicked.connect(_bar_pressed)
 	_os_bar.unclicked.connect(_bar_unpressed)
+	_resize_margins.hovered.connect(_hover_resize_handles)
+	_resize_margins.mouse_exited.connect(_unhover_resize_handles)
 	pass
 
 
@@ -88,6 +97,10 @@ func _unresize() -> void:
 	
 	_resizing = false
 	_cur_loc = ResizeLocation.NONE
+	
+	if _reset_cursor:
+		_unhover_resize_handles()
+		_reset_cursor = false
 	
 	## Change cursor?
 	
@@ -138,39 +151,90 @@ func _determine_location(loc: int) -> ResizeLocation:
 
 func _resize(delta_mouse: Vector2) -> void:
 	
+	var min_size: Vector2 = get_custom_minimum_size()
 	match _cur_loc:
 		ResizeLocation.LEFT:
-			delta_mouse.x = min(delta_mouse.x, size.x-get_custom_minimum_size().x)
-			size.x -= delta_mouse.x
-			if (size.x > get_custom_minimum_size().x):
-				print(size.x)
-				print(get_custom_minimum_size().x)
-				global_position.x += delta_mouse.x
+			var old_width: float = size.x
+			size.x = max(size.x - delta_mouse.x, min_size.x)
+			global_position.x += old_width - size.x
+			
 		ResizeLocation.RIGHT:
 			size.x += delta_mouse.x
+			
 		ResizeLocation.BOTTOM:
 			size.y += delta_mouse.y
+			
 		ResizeLocation.TOP:
-			size.y -= delta_mouse.y
-			global_position.y += delta_mouse.y
+			var old_height: float = size.y
+			size.y = max(size.y - delta_mouse.y, min_size.y)
+			global_position.y += old_height - size.y
+
 		ResizeLocation.TOP_LEFT:
-			size.x -= delta_mouse.x
-			if (size.x > get_minimum_size().x):
-				global_position.x += delta_mouse.x
-			size.y -= delta_mouse.y
-			global_position.y += delta_mouse.y
+			var old_size: Vector2 = size
+			
+			size.x = max(size.x - delta_mouse.x, min_size.x)
+			size.y = max(size.y - delta_mouse.y, min_size.y)
+
+			global_position.x += old_size.x - size.x
+			global_position.y += old_size.y - size.y
+			
 		ResizeLocation.TOP_RIGHT:
-			size.x += delta_mouse.x
-			size.y -= delta_mouse.y
-			global_position.y += delta_mouse.y
+			var old_height: float = size.y
+
+			size.x = max(size.x + delta_mouse.x, min_size.x)
+			size.y = max(size.y - delta_mouse.y, min_size.y)
+
+			global_position.y += old_height - size.y
+			
 		ResizeLocation.BOTTOM_LEFT:
-			size.x -= delta_mouse.x
-			if (size.x > get_minimum_size().x):
-				global_position.x += delta_mouse.x
-			size.y += delta_mouse.y
+			var old_width: float = size.x
+
+			size.x = max(size.x - delta_mouse.x, min_size.x)
+			size.y = max(size.y + delta_mouse.y, min_size.y)
+
+			global_position.x += old_width - size.x
+			
 		ResizeLocation.BOTTOM_RIGHT:
 			size.x += delta_mouse.x
 			size.y += delta_mouse.y
+	pass
+
+func _hover_resize_handles(pos: Vector2) -> void:
+	## If we add custom cursors, we should add that functionality here
+	
+	if _resizing:
+		return
+	
+	var cur_pos: ResizeLocation = _determine_location(_calculate_resize(pos))
+	
+	match cur_pos:
+		ResizeLocation.LEFT:
+			DisplayServer.cursor_set_custom_image(_hori_cursor)
+		ResizeLocation.RIGHT:
+			DisplayServer.cursor_set_custom_image(_hori_cursor)
+		ResizeLocation.TOP:
+			DisplayServer.cursor_set_custom_image(_vert_cursor)
+		ResizeLocation.BOTTOM:
+			DisplayServer.cursor_set_custom_image(_vert_cursor)
+		ResizeLocation.BOTTOM_LEFT:
+			DisplayServer.cursor_set_custom_image(_bl_cursor)
+		ResizeLocation.TOP_RIGHT:
+			DisplayServer.cursor_set_custom_image(_bl_cursor)
+		ResizeLocation.BOTTOM_RIGHT:
+			DisplayServer.cursor_set_custom_image(_br_cursor)
+		ResizeLocation.TOP_LEFT:
+			DisplayServer.cursor_set_custom_image(_br_cursor)
+	
+	pass
+
+func _unhover_resize_handles() -> void:
+	## Set cursor back to whatever we make default cursor
+	if _resizing:
+		_reset_cursor = true
+		return
+	
+	DisplayServer.cursor_set_custom_image(null)
+	
 	pass
 
 ## For the bar movement
