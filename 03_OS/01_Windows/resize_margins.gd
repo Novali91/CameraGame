@@ -19,5 +19,6 @@ func _gui_input(event: InputEvent) -> void:
 				print("Bye")
 				unclicked.emit()
 	elif event is InputEventMouseMotion:
+		print("Hi! Again")
 		hovered.emit(get_global_mouse_position())
 		

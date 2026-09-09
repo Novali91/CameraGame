@@ -225,7 +225,7 @@ func _hover_resize_handles(pos: Vector2) -> void:
 	if _resizing:
 		return
 	
-	var cur_pos: ResizeLocation = _determine_location(_calculate_resize(pos))
+	var cur_pos: ResizeLocation = _calculate_resize(pos)
 	
 	match cur_pos:
 		ResizeLocation.LEFT:
