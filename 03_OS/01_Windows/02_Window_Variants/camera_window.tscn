@@ -10,9 +10,15 @@ class_name CameraWindow
 
 @onready var map: Map = $Window/ResizeMargins/VBoxContainer/Control/AspectRatioContainer/SubViewportContainer/SubViewport/Map as Map
 @onready var time_slider: HSlider = $Window/ResizeMargins/VBoxContainer/Control/TimeSlider as HSlider
+@onready var camera_selector: OptionButton = $Window/ResizeMargins/VBoxContainer/Control/CameraSelector as OptionButton
+
+func _ready():
+	super()
+	for camera_location in map.camera_locations:
+		camera_selector.add_item(camera_location.name)
 
 func _process(_delta: float) -> void:
-	map.play(time_slider.value,0) #second parameter is camera index
+	map.play(time_slider.value,camera_selector.get_item_text(camera_selector.selected))
 "
 
 [node name="CameraWindow" type="Control" unique_id=1105901653]
@@ -49,6 +55,7 @@ layout_mode = 2
 [node name="Control" type="Control" parent="Window/ResizeMargins/VBoxContainer" unique_id=1112528772]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Window/ResizeMargins/VBoxContainer/Control" unique_id=683570388]
 layout_mode = 1
@@ -81,3 +88,8 @@ offset_top = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 max_value = 15.0
+
+[node name="CameraSelector" type="OptionButton" parent="Window/ResizeMargins/VBoxContainer/Control" unique_id=1738741948]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 20.0

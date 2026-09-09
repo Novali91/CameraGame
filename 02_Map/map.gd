@@ -22,7 +22,13 @@ func _ready() -> void:
 		for conversation in person.conversations:
 			conversation.update()
 
-func play(time: float, cam_id: int) -> void:
-	cam.position = camera_locations[cam_id].position
+func play(time: float, cam_name: String) -> void:
+	cam.position = get_camera_location(cam_name).position
 	for person in people:
 		person.travel(time)
+
+func get_camera_location(cam_name: String) -> Marker2D:
+	for camera_location in camera_locations:
+		if camera_location.name == cam_name:
+			return camera_location
+	return null
