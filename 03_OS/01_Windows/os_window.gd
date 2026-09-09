@@ -19,6 +19,8 @@ const TOP: int = 4
 @onready var _br_cursor = preload("res://01_Assets/02_Icons/bottom_right_cursor.png")
 
 var _reset_cursor: bool = false
+var desktop: Desktop
+var taskbar_icon: TaskbarIcon
 
 enum ResizeLocation {
 	TOP,
@@ -77,7 +79,8 @@ func _maximize(is_max: bool) -> void:
 	pass
 
 func _close() -> void:
-	print("close")
+	desktop.window_closed(self)
+	queue_free()
 	pass
 
 func _check_resize(pos: Vector2) -> void:
@@ -256,7 +259,6 @@ func _unhover_resize_handles() -> void:
 ## For the bar movement
 
 func _bar_pressed(pos: Vector2) -> void:
-	
 	_dragging = true
 	
 	pass
@@ -269,3 +271,6 @@ func _bar_unpressed() -> void:
 
 func _drag(delta_mouse: Vector2) -> void:
 	global_position += delta_mouse
+
+func selected() -> void:
+	move_to_front()
