@@ -34,7 +34,7 @@ enum ResizeLocation {
 
 # If holding down on a side of the window to resize:
 var _resizing: bool = false
-var _cur_loc: ResizeLocation
+var _cur_loc: ResizeLocation = ResizeLocation.NONE
 
 var _last_mouse_pos: Vector2
 
@@ -117,34 +117,48 @@ func _calculate_resize(pos: Vector2) -> ResizeLocation:
 	## Check left/right:
 	
 	if pos_x >= glob_x and pos_x <= (glob_x+MARGIN_SIZE):
+		print("Pos: %d, Bounds: %d, %d", [pos_x, glob_x, glob_x+MARGIN_SIZE])
 		total = LEFT
 	elif pos_x <= glob_x + size.x and pos_x >= glob_x + size.x - MARGIN_SIZE:
+		print("Pos: %d, Bounds: %d, %d", [pos_x, glob_x+size.x, glob_x+size.x-MARGIN_SIZE])
 		total = RIGHT
 	
 	if pos_y >= glob_y and pos_y <= (glob_y+MARGIN_SIZE):
+		print("Pos: %d, Bounds: %d, %d", [pos_y, glob_y, glob_y+MARGIN_SIZE])
 		total += TOP
 	elif pos_y <= glob_y+size.y and pos_y >= glob_y + size.y - MARGIN_SIZE:
+		print("Pos: %d, Bounds: %d, %d", [pos_y, glob_y+size.y, glob_y+size.y-MARGIN_SIZE])
 		total += BOTTOM
 	
 	return _determine_location(total)
 
 func _determine_location(loc: int) -> ResizeLocation:
 	match loc:
+		0: 
+			return ResizeLocation.NONE
 		LEFT:
+			print("Left")
 			return ResizeLocation.LEFT
 		RIGHT:
+			print("R")
 			return ResizeLocation.RIGHT
 		BOTTOM:
+			print("B")
 			return ResizeLocation.BOTTOM
 		TOP:
+			print("T")
 			return ResizeLocation.TOP
 		LEFT+BOTTOM:
+			print("LB")
 			return ResizeLocation.BOTTOM_LEFT
 		LEFT+TOP:
+			print("LT")
 			return ResizeLocation.TOP_LEFT
 		RIGHT+BOTTOM:
+			print("RB")
 			return ResizeLocation.BOTTOM_RIGHT
 		RIGHT+TOP:
+			print("RT")
 			return ResizeLocation.TOP_RIGHT
 		_:
 			return ResizeLocation.NONE
@@ -201,6 +215,8 @@ func _resize(delta_mouse: Vector2) -> void:
 
 func _hover_resize_handles(pos: Vector2) -> void:
 	## If we add custom cursors, we should add that functionality here
+	
+	#print(_calculate_resize(pos))
 	
 	if _resizing:
 		return
