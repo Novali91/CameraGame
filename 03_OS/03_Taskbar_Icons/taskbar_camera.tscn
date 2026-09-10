@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mytk2glct6ds"]
 
-[ext_resource type="Script" uid="uid://yvmo6ms0w56s" path="res://03_OS/02_Desktop/02_Taskbar_Icons/taskbar_icon.gd" id="1_el753"]
+[ext_resource type="Script" uid="uid://yvmo6ms0w56s" path="res://03_OS/03_Taskbar_Icons/taskbar_icon.gd" id="1_el753"]
 [ext_resource type="Texture2D" uid="uid://c8vnulp2gp55k" path="res://01_Assets/02_Icons/camera.png" id="2_el753"]
 
 [node name="TaskbarCamera" type="Control" unique_id=1805623024]

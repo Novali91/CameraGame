@@ -1,27 +1,33 @@
 [gd_scene format=3 uid="uid://cbmrgf4jcehcb"]
 
-[ext_resource type="Script" uid="uid://b1bipim1ki3ou" path="res://03_OS/02_Desktop/desktop.gd" id="1_3eq2a"]
+[ext_resource type="Script" uid="uid://b1bipim1ki3ou" path="res://03_OS/desktop.gd" id="1_3eq2a"]
 [ext_resource type="Texture2D" uid="uid://d4a1ba5ysol6u" path="res://01_Assets/02_Icons/desktop_background_temp.jpeg" id="1_l22os"]
-[ext_resource type="PackedScene" uid="uid://c4hbwwcdjj5v3" path="res://03_OS/02_Desktop/01_App_Shortcuts/camera_shortcut.tscn" id="3_q7grr"]
+[ext_resource type="PackedScene" uid="uid://c4hbwwcdjj5v3" path="res://03_OS/02_App_Shortcuts/camera_shortcut.tscn" id="3_q7grr"]
 
-[node name="Desktop" type="Node2D" unique_id=1463141510]
+[node name="Desktop" type="Control" unique_id=571881559]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("1_3eq2a")
 taskbar_icon_spacing = 75.0
 
 [node name="Background" type="TextureRect" parent="." unique_id=1014542277]
-offset_right = 1150.0
-offset_bottom = 650.0
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_l22os")
+expand_mode = 1
 
 [node name="Taskbar" type="ColorRect" parent="." unique_id=236729519]
+layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 575.0
-offset_right = 1154.0
-offset_bottom = 650.0
+offset_top = -136.0
 grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 0.43137255)

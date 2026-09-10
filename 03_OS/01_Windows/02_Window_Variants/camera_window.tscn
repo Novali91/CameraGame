@@ -1,25 +1,9 @@
 [gd_scene format=3 uid="uid://cpbxl37agg6ls"]
 
+[ext_resource type="Script" uid="uid://c58hqevojbylb" path="res://03_OS/01_Windows/02_Window_Variants/camera_window.gd" id="1_55gks"]
 [ext_resource type="Script" uid="uid://brukipraf4dcn" path="res://03_OS/01_Windows/resize_margins.gd" id="2_u308d"]
 [ext_resource type="PackedScene" uid="uid://bunmb3p2ikbb6" path="res://03_OS/01_Windows/01_Bar/os_bar.tscn" id="3_ki0qp"]
 [ext_resource type="PackedScene" uid="uid://el2nfg1fydul" path="res://02_Map/map.tscn" id="4_u308d"]
-
-[sub_resource type="GDScript" id="GDScript_i544j"]
-script/source = "extends OSWindow
-class_name CameraWindow
-
-@onready var map: Map = $Window/ResizeMargins/VBoxContainer/Control/AspectRatioContainer/SubViewportContainer/SubViewport/Map as Map
-@onready var time_slider: HSlider = $Window/ResizeMargins/VBoxContainer/Control/TimeSlider as HSlider
-@onready var camera_selector: OptionButton = $Window/ResizeMargins/VBoxContainer/Control/CameraSelector as OptionButton
-
-func _ready():
-	super()
-	for camera_location in map.camera_locations:
-		camera_selector.add_item(camera_location.name)
-
-func _process(_delta: float) -> void:
-	map.play(time_slider.value,camera_selector.get_item_text(camera_selector.selected))
-"
 
 [node name="CameraWindow" type="Control" unique_id=1105901653]
 custom_minimum_size = Vector2(180, 180)
@@ -27,7 +11,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 180.0
 offset_bottom = 180.0
-script = SubResource("GDScript_i544j")
+script = ExtResource("1_55gks")
 
 [node name="Window" type="PanelContainer" parent="." unique_id=776590632]
 custom_minimum_size = Vector2(180, 180)

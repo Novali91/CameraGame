@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c4hbwwcdjj5v3"]
 
-[ext_resource type="Script" uid="uid://c1f06dmdh75as" path="res://03_OS/02_Desktop/01_App_Shortcuts/app_shortcut.gd" id="1_ywksh"]
+[ext_resource type="Script" uid="uid://c1f06dmdh75as" path="res://03_OS/02_App_Shortcuts/app_shortcut.gd" id="1_ywksh"]
 [ext_resource type="PackedScene" uid="uid://cpbxl37agg6ls" path="res://03_OS/01_Windows/02_Window_Variants/camera_window.tscn" id="2_csg0h"]
 [ext_resource type="Texture2D" uid="uid://c8vnulp2gp55k" path="res://01_Assets/02_Icons/camera.png" id="2_ywksh"]
-[ext_resource type="PackedScene" uid="uid://mytk2glct6ds" path="res://03_OS/02_Desktop/02_Taskbar_Icons/taskbar_camera.tscn" id="3_yk7sx"]
+[ext_resource type="PackedScene" uid="uid://mytk2glct6ds" path="res://03_OS/03_Taskbar_Icons/taskbar_camera.tscn" id="3_yk7sx"]
 
 [node name="CameraShortcut" type="Node2D" unique_id=1949483686]
 script = ExtResource("1_ywksh")

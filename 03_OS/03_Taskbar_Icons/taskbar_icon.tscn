@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w6yu1ctw8o6e"]
 
-[ext_resource type="Script" uid="uid://yvmo6ms0w56s" path="res://03_OS/02_Desktop/02_Taskbar_Icons/taskbar_icon.gd" id="1_1i7ix"]
+[ext_resource type="Script" uid="uid://yvmo6ms0w56s" path="res://03_OS/03_Taskbar_Icons/taskbar_icon.gd" id="1_1i7ix"]
 [ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="2_nwcm1"]
 
 [node name="TaskbarIcon" type="Control" unique_id=1805623024]
