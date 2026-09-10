@@ -13,6 +13,7 @@ const TOP: int = 4
 @onready var _window: PanelContainer = $Window
 @onready var _resize_margins: MarginContainer = $Window/ResizeMargins
 
+## We should put these in a better place (probably in Desktop?)
 @onready var _hori_cursor = preload("res://01_Assets/02_Icons/side_cursor.png")
 @onready var _vert_cursor = preload("res://01_Assets/02_Icons/vertical_cursor.png")
 @onready var _bl_cursor = preload("res://01_Assets/02_Icons/bottom_left_cursor.png")
@@ -208,7 +209,6 @@ func _resize(delta_mouse: Vector2) -> void:
 	pass
 
 func _hover_resize_handles(pos: Vector2) -> void:
-	## If we add custom cursors, we should add that functionality here
 	
 	if _resizing:
 		return
@@ -270,5 +270,4 @@ func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				print("Hi")
 				selected()
