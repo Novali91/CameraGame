@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://clmwwecc0hg0h"]
+
+[ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="1_3f186"]
+
+[node name="Profile" type="Control" unique_id=2122392444]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -248.5
+offset_top = -366.0
+offset_right = 248.5
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1752164876]
+z_index = 99
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="Background" type="ColorRect" parent="MarginContainer" unique_id=705903128]
+layout_mode = 2
+color = Color(0.23137255, 0.23137255, 0.23137255, 0.38431373)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=730605848]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1698891741]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1943650730]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Name here"
+horizontal_alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=78731494]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_3f186")
+
+[node name="Stats" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1842038567]
+layout_mode = 2
+text = "height wieght etc here"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Description" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1444251922]
+layout_mode = 2
+text = "description here"
+autowrap_mode = 3

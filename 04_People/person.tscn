@@ -2,14 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="1_0pife"]
 [ext_resource type="Script" uid="uid://c4v6bplvyuvs5" path="res://04_People/person.gd" id="1_hncb1"]
+[ext_resource type="PackedScene" uid="uid://clmwwecc0hg0h" path="res://02_Map/profile.tscn" id="3_qae2w"]
 
 [node name="Person" type="Node2D" unique_id=738572913]
 script = ExtResource("1_hncb1")
-description = null
-age = null
-sex = null
-height = null
-weight = null
 
 [node name="Button" type="Button" parent="." unique_id=1529186246]
 anchors_preset = 15
@@ -19,4 +15,9 @@ grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("1_0pife")
 
+[node name="Profile" parent="." unique_id=2122392444 instance=ExtResource("3_qae2w")]
+modulate = Color(1, 1, 1, 0)
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

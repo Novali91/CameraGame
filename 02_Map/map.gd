@@ -5,6 +5,7 @@ class_name Map
 @export var people_node: Node
 @export var camera_locations_node: Node
 @export var conversations_node: Node
+@export var conversation_viewer: ConversationViewer
 var people: Array[Person] = []
 var camera_locations: Array[Marker2D] = []
 var conversations: Array[Conversation] = []
@@ -26,6 +27,7 @@ func play(time: float, cam_name: String) -> void:
 	cam.position = get_camera_location(cam_name).position
 	for person in people:
 		person.travel(time)
+	conversation_viewer.update_conversation(time)
 
 func get_camera_location(cam_name: String) -> Marker2D:
 	for camera_location in camera_locations:

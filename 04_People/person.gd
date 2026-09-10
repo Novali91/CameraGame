@@ -20,6 +20,8 @@ var map: Map
 @export var conversations: Array[Conversation]
 var active_conversation: Conversation
 
+@onready var profile: Control = $Profile
+
 #currently only for editor view
 func _process(_delta: float) -> void:
 	map = get_node("../..") as Map #i know this is bad practice but it is for weird editor tool stuff
@@ -61,5 +63,14 @@ func get_travel_node(keyframe: Keyframe) -> TravelNode:
 	return get_node(keyframe.travel_node_path) as TravelNode
 
 func _on_button_pressed() -> void:
-	print("Person details:" + name + " " + description + " " + str(age) + " " + sex + " " + str(height) + " " + str(weight))
+	#print("Person details:" + name + " " + description + " " + str(age) + " " + sex + " " + str(height) + " " + str(weight))
 	print("Conversation: " + str(active_conversation))
+	map.conversation_viewer.conversation = active_conversation
+
+
+func _on_button_mouse_entered() -> void:
+	profile.modulate = Color.WHITE
+
+
+func _on_button_mouse_exited() -> void:
+	profile.modulate = Color.TRANSPARENT
