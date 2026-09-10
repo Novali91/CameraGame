@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="File" format=3 uid="uid://bqx4iq05ia5ig"]
+
+[ext_resource type="Script" uid="uid://dwnorvbig41os" path="res://03_OS/04_Filesystem/file.gd" id="1_bj0bk"]
+
+[resource]
+resource_name = "Johnson"
+script = ExtResource("1_bj0bk")
+metadata/_custom_type_script = "uid://dwnorvbig41os"

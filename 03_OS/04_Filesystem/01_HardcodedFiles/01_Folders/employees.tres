@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Folder" format=3 uid="uid://l107yaqhufa7"]
+
+[ext_resource type="Resource" uid="uid://bqx4iq05ia5ig" path="res://03_OS/04_Filesystem/01_HardcodedFiles/02_Files/johnson.tres" id="1_j6dcq"]
+[ext_resource type="Script" uid="uid://cy3ltjd8p8fwv" path="res://03_OS/04_Filesystem/folder.gd" id="2_cxbet"]
+
+[resource]
+resource_name = "Employees"
+script = ExtResource("2_cxbet")
+children = Array[Resource]([ExtResource("1_j6dcq")])
+metadata/_custom_type_script = "uid://cy3ltjd8p8fwv"

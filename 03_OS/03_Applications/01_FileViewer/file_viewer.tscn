@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dp53e3md451ty"]
+
+[ext_resource type="Script" uid="uid://bree3lc3q7okb" path="res://03_OS/03_Applications/01_FileViewer/file_viewer.gd" id="1_xrljf"]
+
+[node name="FileViewer" type="VBoxContainer" unique_id=1195379845]
+script = ExtResource("1_xrljf")

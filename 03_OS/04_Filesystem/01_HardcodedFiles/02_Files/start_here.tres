@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="File" format=3 uid="uid://duv3on330sr47"]
+
+[ext_resource type="Script" uid="uid://dwnorvbig41os" path="res://03_OS/04_Filesystem/file.gd" id="1_h7es8"]
+
+[resource]
+resource_name = "Start Here!"
+script = ExtResource("1_h7es8")
+metadata/_custom_type_script = "uid://dwnorvbig41os"

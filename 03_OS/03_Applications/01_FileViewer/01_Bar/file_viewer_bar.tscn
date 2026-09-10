@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dajcc61oyngon"]
+
+[ext_resource type="Script" uid="uid://u4tifsjc0faf" path="res://03_OS/03_Applications/01_FileViewer/01_Bar/file_viewer_bar.gd" id="1_0pejj"]
+[ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="2_hj5cb"]
+
+[node name="FileViewerBar" type="HBoxContainer" unique_id=133377203]
+offset_right = 124.0
+offset_bottom = 23.0
+script = ExtResource("1_0pejj")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=804443075]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+texture_normal = ExtResource("2_hj5cb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="." unique_id=921709107]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_alignment = 1

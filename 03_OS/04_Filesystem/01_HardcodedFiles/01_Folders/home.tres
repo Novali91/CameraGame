@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Folder" format=3 uid="uid://dxelhbvfi2ynr"]
+
+[ext_resource type="Script" uid="uid://cy3ltjd8p8fwv" path="res://03_OS/04_Filesystem/folder.gd" id="1_7l55l"]
+[ext_resource type="Resource" uid="uid://l107yaqhufa7" path="res://03_OS/04_Filesystem/01_HardcodedFiles/01_Folders/employees.tres" id="1_78owu"]
+[ext_resource type="Resource" uid="uid://duv3on330sr47" path="res://03_OS/04_Filesystem/01_HardcodedFiles/02_Files/start_here.tres" id="2_67xdc"]
+
+[resource]
+script = ExtResource("1_7l55l")
+children = Array[Resource]([ExtResource("1_78owu"), ExtResource("2_67xdc")])
+metadata/_custom_type_script = "uid://cy3ltjd8p8fwv"
