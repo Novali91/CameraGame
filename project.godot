@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Camera Game"
 run/main_scene="uid://el2nfg1fydul"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
@@ -22,6 +22,10 @@ window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/pdfium-gde/plugin.cfg")
 
 [input_devices]
 
