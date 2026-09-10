@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="1_0pife"]
 [ext_resource type="Script" uid="uid://c4v6bplvyuvs5" path="res://04_People/person.gd" id="1_hncb1"]
 [ext_resource type="PackedScene" uid="uid://clmwwecc0hg0h" path="res://02_Map/profile.tscn" id="3_qae2w"]
+[ext_resource type="Texture2D" uid="uid://d0lc64quicdgo" path="res://01_Assets/02_Icons/speech_bubble_temp.png" id="4_b1q2c"]
 
 [node name="Person" type="Node2D" unique_id=738572913]
 script = ExtResource("1_hncb1")
@@ -17,6 +18,12 @@ icon = ExtResource("1_0pife")
 
 [node name="Profile" parent="." unique_id=2122392444 instance=ExtResource("3_qae2w")]
 modulate = Color(1, 1, 1, 0)
+
+[node name="SpeechBubble" type="Sprite2D" parent="." unique_id=1248221418]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-7.6293945e-06, -110.00001)
+scale = Vector2(0.07624481, 0.07624482)
+texture = ExtResource("4_b1q2c")
 
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]

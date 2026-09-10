@@ -19,7 +19,7 @@ func display(person: Person):
 		if travel_node != null:
 			travel_node_pos = travel_node.position
 		line.add_point(travel_node_pos)
-		continue #deprecated speech bubble code
+		continue
 		if cur_keyframe.narration != null:
 			var cur_bubble = speech_bubble.instantiate()
 			add_child(cur_bubble)

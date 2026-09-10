@@ -21,6 +21,7 @@ var map: Map
 var active_conversation: Conversation
 
 @onready var profile: Control = $Profile
+@onready var speech_bubble: Sprite2D = $SpeechBubble
 
 #currently only for editor view
 func _process(_delta: float) -> void:
@@ -56,6 +57,10 @@ func update_active_conversation(cur_time: float):
 			if cur_time >= conversation.start_time and cur_time <= conversation.end_time:
 				active_conversation = conversation
 				break
+	if active_conversation == null:
+		speech_bubble.modulate = Color.TRANSPARENT
+	else:
+		speech_bubble.modulate = Color.WHITE
 
 func get_travel_node(keyframe: Keyframe) -> TravelNode:
 	if not keyframe.travel_node_path:
@@ -63,8 +68,6 @@ func get_travel_node(keyframe: Keyframe) -> TravelNode:
 	return get_node(keyframe.travel_node_path) as TravelNode
 
 func _on_button_pressed() -> void:
-	#print("Person details:" + name + " " + description + " " + str(age) + " " + sex + " " + str(height) + " " + str(weight))
-	print("Conversation: " + str(active_conversation))
 	map.conversation_viewer.conversation = active_conversation
 
 

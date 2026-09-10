@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c8g7ccgaq1gjr" path="res://04_People/01_Navigation/travel_node.tscn" id="4_nlxlw"]
 [ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="4_p83x3"]
 [ext_resource type="Script" uid="uid://bvg6wxhxd6eh" path="res://02_Map/route_visualization.gd" id="5_0kn42"]
-[ext_resource type="PackedScene" uid="uid://c0w84j5tl2i0n" path="res://02_Map/speech_bubble.tscn" id="6_m81h6"]
 [ext_resource type="Script" uid="uid://d38m28scdapjj" path="res://02_Map/conversation_viewer.gd" id="7_8gkpk"]
 [ext_resource type="PackedScene" uid="uid://cssi8g4355xoj" path="res://04_People/01_Navigation/conversation.tscn" id="7_12wv5"]
 [ext_resource type="PackedScene" uid="uid://i03mt82ikfyo" path="res://04_People/01_Navigation/dialogue_line.tscn" id="8_2iucv"]
@@ -119,7 +118,6 @@ position = Vector2(256, 478)
 [node name="RouteVisualization" type="Node2D" parent="." unique_id=821729632 node_paths=PackedStringArray("line")]
 script = ExtResource("5_0kn42")
 line = NodePath("Line")
-speech_bubble = ExtResource("6_m81h6")
 
 [node name="Line" type="Line2D" parent="RouteVisualization" unique_id=1437924463]
 points = PackedVector2Array(259.2904, 476.2379, 587, 415, 211, 295, 805, 184, 256, 478)
