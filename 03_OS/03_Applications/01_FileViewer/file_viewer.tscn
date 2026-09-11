@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://dp53e3md451ty"]
 
 [ext_resource type="Script" uid="uid://bree3lc3q7okb" path="res://03_OS/03_Applications/01_FileViewer/file_viewer.gd" id="1_xrljf"]
+[ext_resource type="PackedScene" uid="uid://dajcc61oyngon" path="res://03_OS/03_Applications/01_FileViewer/01_Bar/file_viewer_bar.tscn" id="2_sy82w"]
 
 [node name="FileViewer" type="VBoxContainer" unique_id=1195379845]
+theme_override_constants/separation = 0
 script = ExtResource("1_xrljf")
+
+[node name="FileViewerBar" parent="." unique_id=133377203 instance=ExtResource("2_sy82w")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1712284575]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer" unique_id=2080607286]
+layout_mode = 2

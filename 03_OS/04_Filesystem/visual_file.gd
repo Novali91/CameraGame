@@ -1,8 +1,5 @@
 extends VBoxContainer
 
-var filesystem: Folder = load("res://03_OS/04_Filesystem/01_HardcodedFiles/01_Folders/home.tres")
-
-@onready var file_container: HFlowContainer = $PanelContainer/HFlowContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +9,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
-func 
