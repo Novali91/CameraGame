@@ -1,8 +1,20 @@
+class_name VisualFile
 extends VBoxContainer
 
+var is_folder: bool
+var attached_resource: Resource
+
+@onready var _image: TextureRect = $TextureRect
+@onready var _name: Label = $Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if is_folder:
+		_image.texture = load("res://icon.svg") ## Replace with folder icon
+	else:
+		_image.texture = load("res://01_Assets/02_Icons/camera.png") # Replace with file icon
+	
+	_name.text = attached_resource.resource_name
 	pass # Replace with function body.
 
 
