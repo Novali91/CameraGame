@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bree3lc3q7okb" path="res://03_OS/03_Applications/01_FileViewer/file_viewer.gd" id="1_xrljf"]
 [ext_resource type="PackedScene" uid="uid://dajcc61oyngon" path="res://03_OS/03_Applications/01_FileViewer/01_Bar/file_viewer_bar.tscn" id="2_sy82w"]
+[ext_resource type="Script" uid="uid://dr28o72ja5s3c" path="res://03_OS/03_Applications/01_FileViewer/file_container.gd" id="3_hen3p"]
 
 [node name="FileViewer" type="VBoxContainer" unique_id=1195379845]
 theme_override_constants/separation = 0
@@ -13,5 +14,6 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1712284575]
 layout_mode = 2
 
-[node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer" unique_id=2080607286]
+[node name="FileContainer" type="HFlowContainer" parent="PanelContainer" unique_id=2080607286]
 layout_mode = 2
+script = ExtResource("3_hen3p")
