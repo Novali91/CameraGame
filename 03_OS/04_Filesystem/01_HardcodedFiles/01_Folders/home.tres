@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://duv3on330sr47" path="res://03_OS/04_Filesystem/01_HardcodedFiles/02_Files/start_here.tres" id="2_67xdc"]
 
 [resource]
+resource_name = "Home"
 script = ExtResource("1_7l55l")
 children = Array[Resource]([ExtResource("1_78owu"), ExtResource("2_67xdc")])
 metadata/_custom_type_script = "uid://cy3ltjd8p8fwv"

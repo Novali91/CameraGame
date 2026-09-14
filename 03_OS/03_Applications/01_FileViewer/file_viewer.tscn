@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dr28o72ja5s3c" path="res://03_OS/03_Applications/01_FileViewer/file_container.gd" id="3_hen3p"]
 
 [node name="FileViewer" type="VBoxContainer" unique_id=1195379845]
+offset_right = 213.0
+offset_bottom = 137.0
 theme_override_constants/separation = 0
 script = ExtResource("1_xrljf")
 
@@ -13,7 +15,17 @@ layout_mode = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1712284575]
 layout_mode = 2
+size_flags_vertical = 3
 
-[node name="FileContainer" type="HFlowContainer" parent="PanelContainer" unique_id=2080607286]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2056194209]
 layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="FileContainer" type="HFlowContainer" parent="PanelContainer/MarginContainer" unique_id=2080607286]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 15
 script = ExtResource("3_hen3p")

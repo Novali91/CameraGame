@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cy1ncbr66ph6o"]
+
+[ext_resource type="PackedScene" uid="uid://c08vlsgl8ea82" path="res://03_OS/01_Windows/02_Window_Variants/os_window.tscn" id="1_t8osa"]
+[ext_resource type="PackedScene" uid="uid://dp53e3md451ty" path="res://03_OS/03_Applications/01_FileViewer/file_viewer.tscn" id="2_7a21d"]
+
+[node name="FileViewerWindow" unique_id=1105901653 instance=ExtResource("1_t8osa")]
+custom_minimum_size = Vector2(200, 200)
+offset_right = 200.0
+offset_bottom = 200.0
+
+[node name="FileViewer" parent="Window/ResizeMargins/VBoxContainer/Control" parent_id_path=PackedInt32Array(611469863) index="0" unique_id=1195379845 instance=ExtResource("2_7a21d")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

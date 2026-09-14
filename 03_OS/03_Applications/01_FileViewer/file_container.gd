@@ -1,3 +1,4 @@
+class_name FileContainer
 extends HFlowContainer
 
 @onready var _visual_file: PackedScene = preload("res://03_OS/04_Filesystem/visual_file.tscn")
@@ -17,4 +18,9 @@ func create_child(resource: Resource) -> void:
 	new_file.attached_resource = resource
 	new_file.is_folder = resource is Folder
 	add_child(new_file)
+	new_file.pressed.connect(child_pressed.emit)
 	pass
+
+func delete_child(child: VisualFile) -> void:
+	child.pressed.disconnect(child_pressed.emit)
+	child.queue_free()

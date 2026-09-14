@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bs10cv0g8dyqc"]
+
+[ext_resource type="PackedScene" uid="uid://w6yu1ctw8o6e" path="res://03_OS/03_Taskbar_Icons/taskbar_icon.tscn" id="1_0wxux"]
+
+[node name="TaskbarFileViewer" unique_id=1805623024 instance=ExtResource("1_0wxux")]
+
+[node name="Label" parent="." index="0" unique_id=508001607]
+text = "File Viewer"

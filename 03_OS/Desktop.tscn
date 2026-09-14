@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b1bipim1ki3ou" path="res://03_OS/desktop.gd" id="1_3eq2a"]
 [ext_resource type="Texture2D" uid="uid://d4a1ba5ysol6u" path="res://01_Assets/02_Icons/desktop_background_temp.jpeg" id="1_l22os"]
 [ext_resource type="PackedScene" uid="uid://c4hbwwcdjj5v3" path="res://03_OS/02_App_Shortcuts/camera_shortcut.tscn" id="3_q7grr"]
+[ext_resource type="PackedScene" uid="uid://bbjttpsskss6k" path="res://03_OS/02_App_Shortcuts/file_viewer_shortcut.tscn" id="4_50mkm"]
 
 [node name="Desktop" type="Control" unique_id=571881559]
 layout_mode = 3
@@ -33,3 +34,6 @@ grow_vertical = 0
 color = Color(0, 0, 0, 0.43137255)
 
 [node name="CameraShortcut" parent="." unique_id=1949483686 instance=ExtResource("3_q7grr")]
+
+[node name="FileViewerShortcut" parent="." unique_id=37793875 instance=ExtResource("4_50mkm")]
+position = Vector2(8, 164)

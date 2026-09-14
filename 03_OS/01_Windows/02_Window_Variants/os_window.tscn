@@ -37,7 +37,6 @@ layout_mode = 2
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Control" type="Control" parent="Window/ResizeMargins/VBoxContainer" unique_id=1112528772]
+[node name="Control" type="Control" parent="Window/ResizeMargins/VBoxContainer" unique_id=611469863]
 layout_mode = 2
 size_flags_vertical = 3
-mouse_filter = 1
