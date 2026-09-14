@@ -38,6 +38,8 @@ func _enter_folder(folder: Folder) -> void:
 	pass
 
 func _exit_folder() -> void:
+	if _folder_scope.size() == 1:
+		return
 	_folder_scope.remove_at(_folder_scope.size()-1)
 	
 	for file: VisualFile in _file_container.get_children():

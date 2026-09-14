@@ -24,6 +24,8 @@ var _reset_cursor: bool = false
 var desktop: Desktop
 var taskbar_icon: TaskbarIcon
 
+var is_minimized: bool = false
+
 enum ResizeLocation {
 	TOP,
 	LEFT,
@@ -73,7 +75,8 @@ func _physics_process(delta: float) -> void:
 
 ## For buttons in the top bar:
 func _minimize() -> void:
-	print("min")
+	visible = false
+	is_minimized = true
 	pass
 
 func _maximize(is_max: bool) -> void:

@@ -13,3 +13,6 @@ func _on_mouse_exited() -> void:
 
 func _on_pressed() -> void:
 	window.selected()
+	if window.is_minimized:
+		window.visible = true
+		window.is_minimized = false
