@@ -21,3 +21,6 @@ func update_conversation(time: float):
 		temp.get_node("MarginContainer/MarginContainer/HBoxContainer/Time").text = str(line.time) + "s"
 		list_node.add_child(temp)
 		temp.owner = list_node
+
+func close_menu():
+	visible = false

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cesgbmqyqqio0"]
+
+[ext_resource type="Script" uid="uid://ddky3iierort7" path="res://03_OS/03_Applications/02_Terminal/terminal.gd" id="1_7ikfk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ikfk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g84n2"]
+
+[node name="Terminal" type="Control" unique_id=1294411894]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7ikfk")
+
+[node name="Background" type="ColorRect" parent="." unique_id=2048236910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2132998910]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=188654681]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=141573490]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "SOMA shell interpreter | <legal info here> | type \"help\" for list of commands"
+autowrap_mode = 3
+
+[node name="CurLine" type="HBoxContainer" parent="ScrollContainer/VBoxContainer" unique_id=881335558]
+layout_mode = 2
+
+[node name="Prefix" type="Label" parent="ScrollContainer/VBoxContainer/CurLine" unique_id=917295797]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "SOMA/admin/home>"
+
+[node name="LineEdit" type="LineEdit" parent="ScrollContainer/VBoxContainer/CurLine" unique_id=2087112565]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7ikfk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g84n2")
+max_length = 60
+keep_editing_on_text_submit = true
+
+[connection signal="text_submitted" from="ScrollContainer/VBoxContainer/CurLine/LineEdit" to="." method="_on_line_edit_text_submitted"]

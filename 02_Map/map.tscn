@@ -83,13 +83,13 @@ conversation_viewer = NodePath("Camera2D/Conversation Viewer")
 [node name="People" type="Node" parent="." unique_id=443070008]
 
 [node name="PersonA" parent="People" unique_id=738572913 instance=ExtResource("2_0kn42")]
-position = Vector2(259.2904, 476.2379)
+position = Vector2(419.33197, 361.48892)
 route = Array[ExtResource("3_6a3md")]([SubResource("Resource_shwjl"), SubResource("Resource_eakoi"), SubResource("Resource_8jrwq"), SubResource("Resource_gth8u")])
 portrait = ExtResource("4_p83x3")
 speed = 200.0
 
 [node name="PersonB" parent="People" unique_id=299382854 node_paths=PackedStringArray("conversations") instance=ExtResource("2_0kn42")]
-position = Vector2(553.6736, 404.3639)
+position = Vector2(773.8056, 189.82925)
 route = Array[ExtResource("3_6a3md")]([SubResource("Resource_m81h6"), SubResource("Resource_12wv5"), SubResource("Resource_temgq"), SubResource("Resource_8gkpk")])
 portrait = ExtResource("4_p83x3")
 speed = 275.0
@@ -120,12 +120,13 @@ script = ExtResource("5_0kn42")
 line = NodePath("Line")
 
 [node name="Line" type="Line2D" parent="RouteVisualization" unique_id=1437924463]
-points = PackedVector2Array(259.2904, 476.2379, 587, 415, 211, 295, 805, 184, 256, 478)
+points = PackedVector2Array(419.33197, 361.48892, 211, 295, 805, 184, 256, 478)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=62318575]
 offset = Vector2(0.77, 0)
 
 [node name="Conversation Viewer" type="Control" parent="Camera2D" unique_id=1530081595]
+visible = false
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
@@ -163,6 +164,12 @@ custom_minimum_size = Vector2(0, 2000)
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Button" type="Button" parent="Camera2D/Conversation Viewer" unique_id=1951455592]
+layout_mode = 1
+offset_right = 136.0
+offset_bottom = 136.0
+icon = ExtResource("4_p83x3")
+
 [node name="Camera Locations" type="Node" parent="." unique_id=1552811131]
 
 [node name="CamA" type="Marker2D" parent="Camera Locations" unique_id=227483236]
@@ -177,3 +184,5 @@ position = Vector2(557, 579)
 lines = Array[ExtResource("8_temgq")]([SubResource("Resource_2iucv"), SubResource("Resource_p83x3"), SubResource("Resource_xvpcf")])
 start_time = 4.0
 end_time = 6.0
+
+[connection signal="pressed" from="Camera2D/Conversation Viewer/Button" to="Camera2D/Conversation Viewer" method="close_menu"]

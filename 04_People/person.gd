@@ -68,12 +68,11 @@ func get_travel_node(keyframe: Keyframe) -> TravelNode:
 	return get_node(keyframe.travel_node_path) as TravelNode
 
 func _on_button_pressed() -> void:
+	map.conversation_viewer.visible = true
 	map.conversation_viewer.conversation = active_conversation
-
 
 func _on_button_mouse_entered() -> void:
 	profile.modulate = Color.WHITE
-
 
 func _on_button_mouse_exited() -> void:
 	profile.modulate = Color.TRANSPARENT
