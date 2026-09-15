@@ -7,7 +7,7 @@ class_name Map
 @export var conversations_node: Node
 @export var conversation_viewer: ConversationViewer
 var people: Array[Person] = []
-var camera_locations: Array[Marker2D] = []
+var camera_locations: Array[CameraLocation] = []
 var conversations: Array[Conversation] = []
 
 func _ready() -> void:
@@ -16,7 +16,7 @@ func _ready() -> void:
 		people.append(person_node as Person)
 	var camera_locations_nodes = camera_locations_node.get_children()
 	for camera_location_node in camera_locations_nodes:
-		camera_locations.append(camera_location_node as Marker2D)
+		camera_locations.append(camera_location_node as CameraLocation)
 	for conversation_node in conversations_node.get_children():
 		conversations.append(conversation_node as Conversation)
 	for person in people:
@@ -29,7 +29,7 @@ func play(time: float, cam_name: String) -> void:
 		person.travel(time)
 	conversation_viewer.update_conversation(time)
 
-func get_camera_location(cam_name: String) -> Marker2D:
+func get_camera_location(cam_name: String) -> CameraLocation:
 	for camera_location in camera_locations:
 		if camera_location.name == cam_name:
 			return camera_location

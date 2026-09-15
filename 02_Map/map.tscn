@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cssi8g4355xoj" path="res://04_People/01_Navigation/conversation.tscn" id="7_12wv5"]
 [ext_resource type="PackedScene" uid="uid://i03mt82ikfyo" path="res://04_People/01_Navigation/dialogue_line.tscn" id="8_2iucv"]
 [ext_resource type="Script" uid="uid://d3k1q53qepbfn" path="res://04_People/01_Navigation/dialogue_line.gd" id="8_temgq"]
+[ext_resource type="PackedScene" uid="uid://sypu65de7ixb" path="res://02_Map/camera_location.tscn" id="9_p83x3"]
 
 [sub_resource type="Resource" id="Resource_shwjl"]
 script = ExtResource("3_6a3md")
@@ -120,7 +121,7 @@ script = ExtResource("5_0kn42")
 line = NodePath("Line")
 
 [node name="Line" type="Line2D" parent="RouteVisualization" unique_id=1437924463]
-points = PackedVector2Array(419.33197, 361.48892, 211, 295, 805, 184, 256, 478)
+points = PackedVector2Array(419.33197, 361.48892, 587, 415, 211, 295, 805, 184, 256, 478)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=62318575]
 offset = Vector2(0.77, 0)
@@ -172,11 +173,16 @@ icon = ExtResource("4_p83x3")
 
 [node name="Camera Locations" type="Node" parent="." unique_id=1552811131]
 
-[node name="CamA" type="Marker2D" parent="Camera Locations" unique_id=227483236]
-position = Vector2(472, 311)
+[node name="CamA" parent="Camera Locations" unique_id=1223290479 instance=ExtResource("9_p83x3")]
+password = "hello"
 
-[node name="CamB" type="Marker2D" parent="Camera Locations" unique_id=1360532646]
-position = Vector2(557, 579)
+[node name="CamB" parent="Camera Locations" unique_id=290399668 instance=ExtResource("9_p83x3")]
+position = Vector2(861, 65)
+password = "bye"
+
+[node name="CamC" parent="Camera Locations" unique_id=1235367491 instance=ExtResource("9_p83x3")]
+position = Vector2(271, 202)
+password = "yo"
 
 [node name="Conversations" type="Node" parent="." unique_id=1820263092]
 

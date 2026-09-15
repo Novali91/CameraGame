@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://8jdlqpn7oged"]
+
+[ext_resource type="Script" uid="uid://dwypf5ilukm2b" path="res://03_OS/game.gd" id="1_k3jhd"]
+[ext_resource type="PackedScene" uid="uid://cbmrgf4jcehcb" path="res://03_OS/Desktop.tscn" id="1_q4rh0"]
+
+[node name="Game" type="Control" unique_id=136335167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k3jhd")
+
+[node name="Desktop" parent="." unique_id=571881559 instance=ExtResource("1_q4rh0")]
+layout_mode = 0

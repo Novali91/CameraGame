@@ -52,7 +52,6 @@ func execute_command(command: String):
 			if check_argument_count(tokens,1):
 				add_line(help_text,false)
 		"unlock":
-			#gotta wait for cameras to have ids and paasswords
 			pass
 		"clear":
 			if check_argument_count(tokens, 1):

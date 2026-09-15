@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://sypu65de7ixb"]
+
+[ext_resource type="Script" uid="uid://bkhjobroefjc7" path="res://02_Map/camera_location.gd" id="1_ylgiy"]
+
+[node name="CameraLocation" type="Marker2D" unique_id=1223290479]
+script = ExtResource("1_ylgiy")

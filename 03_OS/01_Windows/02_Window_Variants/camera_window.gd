@@ -8,7 +8,8 @@ class_name CameraWindow
 func _ready():
 	super()
 	for camera_location in map.camera_locations:
-		camera_selector.add_item(camera_location.name)
+		if GameManager.unlocked_cams.has(camera_location.name):
+			camera_selector.add_item(camera_location.name)
 
 func _process(_delta: float) -> void:
 	map.play(time_slider.value,camera_selector.get_item_text(camera_selector.selected))
