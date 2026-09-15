@@ -52,7 +52,21 @@ func execute_command(command: String):
 			if check_argument_count(tokens,1):
 				add_line(help_text,false)
 		"unlock":
-			pass
+			if check_argument_count(tokens,3):
+				var camera_unlocked = false
+				var camera_found = false
+				for camera in GameManager.cameras:
+					if camera.id == tokens[1] and camera.password == tokens[2]:
+						camera_found = true
+						if camera.unlocked:
+							add_line(tokens[1] + " is already unlocked",false)
+							break
+						camera.unlocked = true
+						camera_unlocked = true
+						add_line("Unlocked " + tokens[1],false)
+						break
+				if not camera_found and not camera_unlocked:
+					add_line("Incorrect combination",false)
 		"clear":
 			if check_argument_count(tokens, 1):
 				for terminal_line in terminal_lines:

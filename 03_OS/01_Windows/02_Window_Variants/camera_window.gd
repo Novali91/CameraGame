@@ -8,7 +8,12 @@ class_name CameraWindow
 func _ready():
 	super()
 	for camera_location in map.camera_locations:
-		if GameManager.unlocked_cams.has(camera_location.name):
+		var camera_found = false
+		for camera_details in GameManager.cameras:
+			if camera_details.id == camera_location.name and camera_details.unlocked:
+				camera_found = true
+				break
+		if camera_found:
 			camera_selector.add_item(camera_location.name)
 
 func _process(_delta: float) -> void:
