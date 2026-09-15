@@ -67,6 +67,7 @@ func execute_command(command: String):
 						break
 				if not camera_found and not camera_unlocked:
 					add_line("Incorrect combination",false)
+			GameManager.desktop.update_cams_in_cam_windows()
 		"clear":
 			if check_argument_count(tokens, 1):
 				for terminal_line in terminal_lines:

@@ -7,6 +7,10 @@ class_name CameraWindow
 
 func _ready():
 	super()
+	update_camera_list()
+
+func update_camera_list():
+	camera_selector.clear()
 	for camera_location in map.camera_locations:
 		var camera_found = false
 		for camera_details in GameManager.cameras:

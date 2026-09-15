@@ -3,6 +3,7 @@ class_name Desktop
 
 @onready var taskbar = $Taskbar
 var windows: Array[OSWindow] = []
+var windows3: Array[OSWindow] = []
 var taskbar_icons: Array[TaskbarIcon] = []
 
 @export var taskbar_icon_spacing: float
@@ -12,6 +13,7 @@ func add_window(window_scene: PackedScene, taskbar_icon_scene: PackedScene):
 	add_child(window)
 	window.owner = self
 	windows.append(window)
+	windows3.append(window)
 	window.desktop = self
 	
 	var taskbar_icon = taskbar_icon_scene.instantiate() as TaskbarIcon
@@ -35,3 +37,8 @@ func window_closed(window: OSWindow):
 	windows.erase(window)
 	window.taskbar_icon.queue_free()
 	order_taskbar()
+
+func update_cams_in_cam_windows():
+	for window in windows:
+		if window is CameraWindow:
+			(window as CameraWindow).update_camera_list()
