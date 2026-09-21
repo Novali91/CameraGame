@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dcmy5512tnjt4"]
+
+[ext_resource type="Shader" uid="uid://dfyd71esqen0k" path="res://03_OS/05_Login_Screen/globe.gdshader" id="1_ec035"]
+[ext_resource type="Texture2D" uid="uid://cbt3b3p470so5" path="res://01_Assets/02_Icons/soma_logo.png" id="1_jpkrg"]
+[ext_resource type="Texture2D" uid="uid://cw6a8h85teqkf" path="res://01_Assets/02_Icons/login_button.png" id="2_ec035"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6jqr"]
+shader = ExtResource("1_ec035")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jpkrg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6jqr"]
+atlas = ExtResource("2_ec035")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54t5d"]
+atlas = ExtResource("2_ec035")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r42b0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6jqr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54t5d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LoginScreen" type="Control" unique_id=1226607813]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Background" type="ColorRect" parent="." unique_id=1317462834]
+material = SubResource("ShaderMaterial_c6jqr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.103743516, 0.10374353, 0.103743516, 1)
+
+[node name="Soma Logo" type="Sprite2D" parent="." unique_id=992891828]
+position = Vector2(953.00006, 428.00003)
+scale = Vector2(23.65625, 23.65625)
+texture = ExtResource("1_jpkrg")
+
+[node name="Button" type="Button" parent="." unique_id=339934467]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -215.0
+offset_top = -215.60999
+offset_right = 215.0
+offset_bottom = -48.61206
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jpkrg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Button" unique_id=657117448]
+position = Vector2(214, 86)
+scale = Vector2(12.59375, 12.84375)
+sprite_frames = SubResource("SpriteFrames_r42b0")
+frame_progress = 0.9423245
