@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7yasueldt80o"]
 
 [ext_resource type="Script" uid="uid://yvmo6ms0w56s" path="res://03_OS/03_Taskbar_Icons/taskbar_icon.gd" id="1_seqt5"]
-[ext_resource type="Texture2D" uid="uid://cegjqttv4nt3s" path="res://01_Assets/02_Icons/Terminalicon2.png" id="2_seqt5"]
+[ext_resource type="Texture2D" uid="uid://dabnmq8i4qfgo" path="res://01_Assets/02_Icons/shell.png" id="2_seqt5"]
 
 [node name="TaskbarIcon" type="Control" unique_id=1805623024]
 layout_mode = 3

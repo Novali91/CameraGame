@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dajcc61oyngon"]
 
 [ext_resource type="Script" uid="uid://u4tifsjc0faf" path="res://03_OS/03_Applications/01_FileViewer/01_Bar/file_viewer_bar.gd" id="1_0pejj"]
-[ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="2_hj5cb"]
+[ext_resource type="Texture2D" uid="uid://c0wh1j5ccc3k1" path="res://01_Assets/02_Icons/back_button.png" id="2_hj5cb"]
 
 [node name="FileViewerBar" type="HBoxContainer" unique_id=133377203]
 offset_right = 124.0

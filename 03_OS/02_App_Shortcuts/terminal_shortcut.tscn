@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://oqx8n80x0tgo"]
 
 [ext_resource type="Script" uid="uid://c1f06dmdh75as" path="res://03_OS/02_App_Shortcuts/app_shortcut.gd" id="1_6t3gf"]
-[ext_resource type="Texture2D" uid="uid://cegjqttv4nt3s" path="res://01_Assets/02_Icons/Terminalicon2.png" id="2_6t3gf"]
 [ext_resource type="PackedScene" uid="uid://cwnydftkvus4k" path="res://03_OS/01_Windows/02_Window_Variants/terminal_window.tscn" id="2_wu4vp"]
 [ext_resource type="PackedScene" uid="uid://b7yasueldt80o" path="res://03_OS/03_Taskbar_Icons/terminal_icon.tscn" id="3_bqeg5"]
+[ext_resource type="Texture2D" uid="uid://dabnmq8i4qfgo" path="res://01_Assets/02_Icons/shell.png" id="4_bqeg5"]
 
 [node name="TerminalShortcut" type="Node2D" unique_id=1949483686]
 script = ExtResource("1_6t3gf")
@@ -26,7 +26,7 @@ grow_vertical = 2
 
 [node name="Button" type="TextureButton" parent="Container/AspectRatioContainer" unique_id=1165881510]
 layout_mode = 2
-texture_normal = ExtResource("2_6t3gf")
+texture_normal = ExtResource("4_bqeg5")
 ignore_texture_size = true
 stretch_mode = 0
 

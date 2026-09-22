@@ -3,10 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://cas8iltxmmus" path="res://03_OS/02_App_Shortcuts/app_shortcut.tscn" id="1_u1dq8"]
 [ext_resource type="PackedScene" uid="uid://cy1ncbr66ph6o" path="res://03_OS/01_Windows/02_Window_Variants/file_viewer_window.tscn" id="2_pflqe"]
 [ext_resource type="PackedScene" uid="uid://bs10cv0g8dyqc" path="res://03_OS/03_Taskbar_Icons/taskbar_file_viewer.tscn" id="3_pflqe"]
+[ext_resource type="Texture2D" uid="uid://ce0vaptlrkh7j" path="res://01_Assets/02_Icons/folder.png" id="4_nc7vn"]
 
 [node name="FileViewerShortcut" unique_id=1949483686 instance=ExtResource("1_u1dq8")]
 window_scene = ExtResource("2_pflqe")
 taskbar_icon_scene = ExtResource("3_pflqe")
+
+[node name="Button" parent="Container/AspectRatioContainer" parent_id_path=PackedInt32Array(518180970) index="0" unique_id=1165881510]
+texture_normal = ExtResource("4_nc7vn")
 
 [node name="Label" parent="Container" parent_id_path=PackedInt32Array(793288334) index="1" unique_id=1844243870]
 text = "File Viewer"

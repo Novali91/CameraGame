@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://bs10cv0g8dyqc"]
 
 [ext_resource type="PackedScene" uid="uid://w6yu1ctw8o6e" path="res://03_OS/03_Taskbar_Icons/taskbar_icon.tscn" id="1_0wxux"]
+[ext_resource type="Texture2D" uid="uid://ce0vaptlrkh7j" path="res://01_Assets/02_Icons/folder.png" id="2_k20q0"]
 
 [node name="TaskbarFileViewer" unique_id=1805623024 instance=ExtResource("1_0wxux")]
 
 [node name="Label" parent="." index="0" unique_id=508001607]
 text = "File Viewer"
+
+[node name="TextureButton" parent="AspectRatioContainer" parent_id_path=PackedInt32Array(534047639) index="0" unique_id=293982635]
+texture_normal = ExtResource("2_k20q0")

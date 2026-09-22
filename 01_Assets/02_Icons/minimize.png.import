@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cegjqttv4nt3s"
-path="res://.godot/imported/Terminalicon2.png-4163583d7715ebae4927edd7f805c6e6.ctex"
+uid="uid://bn8w2ca8js2a7"
+path="res://.godot/imported/minimize.png-1b9cde99cf49bc73f5a90555ab356e4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_Assets/02_Icons/Terminalicon2.png"
-dest_files=["res://.godot/imported/Terminalicon2.png-4163583d7715ebae4927edd7f805c6e6.ctex"]
+source_file="res://01_Assets/02_Icons/minimize.png"
+dest_files=["res://.godot/imported/minimize.png-1b9cde99cf49bc73f5a90555ab356e4d.ctex"]
 
 [params]
 
