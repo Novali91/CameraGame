@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cesgbmqyqqio0"]
 
 [ext_resource type="Script" uid="uid://ddky3iierort7" path="res://03_OS/03_Applications/02_Terminal/terminal.gd" id="1_7ikfk"]
+[ext_resource type="FontFile" uid="uid://bvbd7xbwpue12" path="res://01_Assets/03_Fonts/W95F.otf" id="2_7ikfk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7ikfk"]
 
@@ -40,6 +41,7 @@ size_flags_horizontal = 3
 
 [node name="Header" type="Label" parent="ScrollContainer/VBoxContainer" unique_id=141573490]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7ikfk")
 theme_override_font_sizes/font_size = 40
 text = "SOMA shell interpreter | <legal info here> | type \"help\" for list of commands"
 autowrap_mode = 3
@@ -49,12 +51,14 @@ layout_mode = 2
 
 [node name="Prefix" type="Label" parent="ScrollContainer/VBoxContainer/CurLine" unique_id=917295797]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7ikfk")
 theme_override_font_sizes/font_size = 40
 text = "SOMA/admin/home>"
 
 [node name="LineEdit" type="LineEdit" parent="ScrollContainer/VBoxContainer/CurLine" unique_id=2087112565]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_7ikfk")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_7ikfk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_g84n2")

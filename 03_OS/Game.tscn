@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dwypf5ilukm2b" path="res://03_OS/game.gd" id="1_k3jhd"]
 [ext_resource type="PackedScene" uid="uid://cbmrgf4jcehcb" path="res://03_OS/Desktop.tscn" id="1_q4rh0"]
 [ext_resource type="Script" uid="uid://b1o4ku5voa1o1" path="res://02_Map/camera_details.gd" id="2_wfgi6"]
+[ext_resource type="PackedScene" uid="uid://dcmy5512tnjt4" path="res://03_OS/05_Login_Screen/login_screen.tscn" id="4_lvx6r"]
 
 [sub_resource type="Resource" id="Resource_lvx6r"]
 script = ExtResource("2_wfgi6")
@@ -34,4 +35,7 @@ script = ExtResource("1_k3jhd")
 cameras = Array[ExtResource("2_wfgi6")]([SubResource("Resource_lvx6r"), SubResource("Resource_ykki1"), SubResource("Resource_1jcfi")])
 
 [node name="Desktop" parent="." unique_id=571881559 instance=ExtResource("1_q4rh0")]
+layout_mode = 0
+
+[node name="LoginScreen" parent="." unique_id=1226607813 instance=ExtResource("4_lvx6r")]
 layout_mode = 0

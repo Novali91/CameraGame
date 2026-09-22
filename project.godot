@@ -30,6 +30,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray()
 
+[gui]
+
+theme/custom_font="uid://bvbd7xbwpue12"
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true

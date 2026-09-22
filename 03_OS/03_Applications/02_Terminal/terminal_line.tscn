@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://114py82f455r"]
 
+[ext_resource type="FontFile" uid="uid://bvbd7xbwpue12" path="res://01_Assets/03_Fonts/W95F.otf" id="1_msctr"]
+
 [node name="TerminalLine" type="Label" unique_id=1714150144]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_msctr")
 theme_override_font_sizes/font_size = 40
 text = "hello"
 autowrap_mode = 3

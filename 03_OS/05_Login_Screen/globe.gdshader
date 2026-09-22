@@ -1,10 +1,10 @@
 shader_type canvas_item;
 
-const vec2 center = vec2(540.0,700.0);
-const float rad = 450.0;
-const float line_spacing = 60.0;
-const float line_thickness = 10.0;
-const float pixel_size = 4.0;
+const vec2 center = vec2(960.0,1600.0);
+const float rad = 1050.0;
+const float line_spacing = 90.0;
+const float line_thickness = 20.0;
+const float pixel_size = 8.0;
 const float turn_speed = 20.0;
 
 float curve(float x) {
