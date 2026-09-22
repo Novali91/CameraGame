@@ -28,8 +28,8 @@ func add_window(window_scene: PackedScene, taskbar_icon_scene: PackedScene):
 func order_taskbar():
 	for icon_index in range(taskbar_icons.size()):
 		var taskbar_icon = taskbar_icons[icon_index]
-		taskbar_icon.position.y = 15 #magic number idc man
-		taskbar_icon.position.x = icon_index * taskbar_icon_spacing
+		taskbar_icon.position.y = 25 #magic number idc man
+		taskbar_icon.position.x = icon_index * taskbar_icon_spacing + 25 #another magic number idgaf
 
 func window_closed(window: OSWindow):
 	####something here

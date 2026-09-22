@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4a1ba5ysol6u"
-path="res://.godot/imported/desktop_background_temp.jpeg-bd914e9a7870cd6f391f2a224564b90b.ctex"
+uid="uid://booa2i17tjgda"
+path="res://.godot/imported/taskbar.png-4574d4c56a9711a25fc730cb31663ab4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://01_Assets/02_Icons/desktop_background_temp.jpeg"
-dest_files=["res://.godot/imported/desktop_background_temp.jpeg-bd914e9a7870cd6f391f2a224564b90b.ctex"]
+source_file="res://01_Assets/02_Icons/taskbar.png"
+dest_files=["res://.godot/imported/taskbar.png-4574d4c56a9711a25fc730cb31663ab4.ctex"]
 
 [params]
 

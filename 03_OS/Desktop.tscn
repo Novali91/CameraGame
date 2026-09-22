@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cbmrgf4jcehcb"]
 
 [ext_resource type="Script" uid="uid://b1bipim1ki3ou" path="res://03_OS/desktop.gd" id="1_3eq2a"]
-[ext_resource type="Texture2D" uid="uid://d4a1ba5ysol6u" path="res://01_Assets/02_Icons/desktop_background_temp.jpeg" id="1_l22os"]
+[ext_resource type="Texture2D" uid="uid://bhm8sr3pth6nn" path="res://01_Assets/02_Icons/desktop.png" id="2_nca2v"]
 [ext_resource type="PackedScene" uid="uid://c4hbwwcdjj5v3" path="res://03_OS/02_App_Shortcuts/camera_shortcut.tscn" id="3_q7grr"]
+[ext_resource type="Texture2D" uid="uid://booa2i17tjgda" path="res://01_Assets/02_Icons/taskbar.png" id="3_wbgks"]
 [ext_resource type="PackedScene" uid="uid://bbjttpsskss6k" path="res://03_OS/02_App_Shortcuts/file_viewer_shortcut.tscn" id="4_50mkm"]
 [ext_resource type="PackedScene" uid="uid://oqx8n80x0tgo" path="res://03_OS/02_App_Shortcuts/terminal_shortcut.tscn" id="5_nca2v"]
 
@@ -12,7 +13,7 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_3eq2a")
-taskbar_icon_spacing = 75.0
+taskbar_icon_spacing = 125.0
 
 [node name="Background" type="TextureRect" parent="." unique_id=1014542277]
 layout_mode = 0
@@ -20,19 +21,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_l22os")
+texture = ExtResource("2_nca2v")
 expand_mode = 1
 
-[node name="Taskbar" type="ColorRect" parent="." unique_id=236729519]
+[node name="Taskbar" type="TextureRect" parent="." unique_id=723046086]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -136.0
+offset_top = -150.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0, 0, 0, 0.43137255)
+texture = ExtResource("3_wbgks")
 
 [node name="CameraShortcut" parent="." unique_id=1949483686 instance=ExtResource("3_q7grr")]
 
