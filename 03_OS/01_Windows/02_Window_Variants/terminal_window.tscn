@@ -3,7 +3,16 @@
 [ext_resource type="Script" uid="uid://7j7r80sx0lyf" path="res://03_OS/01_Windows/02_Window_Variants/os_window.gd" id="1_l5gu7"]
 [ext_resource type="Script" uid="uid://brukipraf4dcn" path="res://03_OS/01_Windows/resize_margins.gd" id="2_vt272"]
 [ext_resource type="PackedScene" uid="uid://bunmb3p2ikbb6" path="res://03_OS/01_Windows/01_Bar/os_bar.tscn" id="3_dundn"]
+[ext_resource type="Texture2D" uid="uid://dabnmq8i4qfgo" path="res://01_Assets/02_Icons/shell.png" id="4_dundn"]
 [ext_resource type="PackedScene" uid="uid://cesgbmqyqqio0" path="res://03_OS/03_Applications/02_Terminal/terminal.tscn" id="4_vt272"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt272"]
+bg_color = Color(0.3255085, 0.3255085, 0.3255085, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(15.3, 15.3, 15.3, 1)
 
 [node name="TerminalWindow" type="Control" unique_id=1105901653]
 custom_minimum_size = Vector2(180, 180)
@@ -22,6 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_vt272")
 
 [node name="ResizeMargins" type="MarginContainer" parent="Window" unique_id=361568993]
 layout_mode = 2
@@ -37,6 +47,8 @@ layout_mode = 2
 [node name="OSBar" parent="Window/ResizeMargins/VBoxContainer" unique_id=2124201171 instance=ExtResource("3_dundn")]
 layout_mode = 2
 mouse_filter = 1
+icon = ExtResource("4_dundn")
+title = "Terminal"
 
 [node name="Control" type="Control" parent="Window/ResizeMargins/VBoxContainer" unique_id=611469863]
 layout_mode = 2

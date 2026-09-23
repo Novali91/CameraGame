@@ -16,6 +16,9 @@ signal unclicked
 @onready var _close: TextureButton = $HBoxContainer/HBoxContainer/Close
 @onready var _blank: Control = $HBoxContainer/Blank
 
+@export var icon: Texture2D
+@export var title: String
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,8 +28,12 @@ func _ready() -> void:
 	_close.pressed.connect(_close_pressed_emit)
 	_blank.clicked.connect(_bar_pressed)
 	_blank.unclicked.connect(_bar_unpressed)
-	
+	update_title_and_icon()
 	pass # Replace with function body.
+
+func update_title_and_icon():
+	$HBoxContainer/Label.text = title
+	$HBoxContainer/TextureRect.texture = icon
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

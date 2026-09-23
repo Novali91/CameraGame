@@ -10,14 +10,23 @@
 [ext_resource type="Texture2D" uid="uid://b3ij1r8ufv42" path="res://01_Assets/02_Icons/window.png" id="6_ruj51"]
 [ext_resource type="Texture2D" uid="uid://doforabi2egje" path="res://01_Assets/02_Icons/close.png" id="8_wpfi6"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_du7wy"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(18.892, 18.892, 18.892, 1)
+
 [node name="OSBar" type="PanelContainer" unique_id=2124201171]
 offset_right = 150.0
-offset_bottom = 23.0
+offset_bottom = 22.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_du7wy")
 script = ExtResource("1_t0t7v")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1031264196]
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_vertical = 4
 theme_override_constants/separation = 8
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1853550128]
@@ -43,6 +52,7 @@ script = ExtResource("3_anu4y")
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer" unique_id=1872948667]
 custom_minimum_size = Vector2(72, 20)
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_constants/separation = 6
 
 [node name="Minimize" type="TextureButton" parent="HBoxContainer/HBoxContainer" unique_id=1062393805]

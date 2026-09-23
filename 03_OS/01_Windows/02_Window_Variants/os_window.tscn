@@ -4,6 +4,14 @@
 [ext_resource type="Script" uid="uid://brukipraf4dcn" path="res://03_OS/01_Windows/resize_margins.gd" id="2_c3efw"]
 [ext_resource type="PackedScene" uid="uid://bunmb3p2ikbb6" path="res://03_OS/01_Windows/01_Bar/os_bar.tscn" id="2_ttbdv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smaum"]
+bg_color = Color(0.3255085, 0.3255085, 0.3255085, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(15.3, 15.3, 15.3, 1)
+
 [node name="OSWindow" type="Control" unique_id=1105901653]
 custom_minimum_size = Vector2(180, 180)
 layout_mode = 3
@@ -21,6 +29,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_smaum")
 
 [node name="ResizeMargins" type="MarginContainer" parent="Window" unique_id=361568993]
 layout_mode = 2
