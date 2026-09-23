@@ -100,7 +100,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_54t5d")
-time_between_lines = 0.3
+time_between_lines = 0.15
 login_screen = NodePath("..")
 
 [node name="Background" type="ColorRect" parent="BootTerminal" unique_id=2062584689]

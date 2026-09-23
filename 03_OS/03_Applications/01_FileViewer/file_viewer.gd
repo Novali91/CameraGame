@@ -7,6 +7,9 @@ var _folder_scope: Array[Folder]
 @onready var _file_container: FileContainer = $PanelContainer/MarginContainer/FileContainer
 @onready var _bar: FileViewerBar = $FileViewerBar
 
+var window: PackedScene = preload("res://03_OS/01_Windows/02_Window_Variants/file_reader_window.tscn")
+var taskbar_icon: PackedScene = preload("res://03_OS/03_Taskbar_Icons/file_reader_icon.tscn")
+@onready var desktop: Desktop = get_node("/root/Game/Desktop")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_bar.exit.connect(_exit_folder)
@@ -23,8 +26,8 @@ func _item_pressed(item: VisualFile) -> void:
 	if item.is_folder:
 		_enter_folder(item.attached_resource)
 	else:
-		# How do we handle opening files? Need to open PDFReader; do we pass a signal up to desktop?
-		pass
+		print(desktop)
+		desktop.add_window(window, taskbar_icon)
 
 func _enter_folder(folder: Folder) -> void:
 	_folder_scope.append(folder)

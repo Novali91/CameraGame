@@ -24,6 +24,7 @@ func add_window(window_scene: PackedScene, taskbar_icon_scene: PackedScene):
 	taskbar_icon.desktop = self
 	window.taskbar_icon = taskbar_icon
 	order_taskbar()
+	print(taskbar_icons.size())
 
 func order_taskbar():
 	for icon_index in range(taskbar_icons.size()):

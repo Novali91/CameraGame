@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d1ri3lclwrmpm"]
+
+[ext_resource type="Script" uid="uid://7j7r80sx0lyf" path="res://03_OS/01_Windows/02_Window_Variants/os_window.gd" id="1_fgqil"]
+[ext_resource type="Script" uid="uid://brukipraf4dcn" path="res://03_OS/01_Windows/resize_margins.gd" id="2_af42t"]
+[ext_resource type="PackedScene" uid="uid://bunmb3p2ikbb6" path="res://03_OS/01_Windows/01_Bar/os_bar.tscn" id="3_qt7d5"]
+[ext_resource type="PackedScene" uid="uid://bmigmk21n6a2g" path="res://03_OS/03_Applications/04_FileReader/file_reader.tscn" id="4_af42t"]
+[ext_resource type="Texture2D" uid="uid://s8ypmq4pj1b3" path="res://01_Assets/02_Icons/file.png" id="4_qt7d5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smaum"]
+bg_color = Color(0.3255085, 0.3255085, 0.3255085, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(15.3, 15.3, 15.3, 1)
+
+[node name="OSWindow" type="Control" unique_id=1105901653]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 180.0
+offset_bottom = 180.0
+script = ExtResource("1_fgqil")
+
+[node name="Window" type="PanelContainer" parent="." unique_id=776590632]
+custom_minimum_size = Vector2(180, 180)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_smaum")
+
+[node name="ResizeMargins" type="MarginContainer" parent="Window" unique_id=361568993]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+script = ExtResource("2_af42t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/ResizeMargins" unique_id=1863261995]
+layout_mode = 2
+
+[node name="OSBar" parent="Window/ResizeMargins/VBoxContainer" unique_id=2124201171 instance=ExtResource("3_qt7d5")]
+layout_mode = 2
+mouse_filter = 1
+icon = ExtResource("4_qt7d5")
+title = "File"
+
+[node name="Control" type="Control" parent="Window/ResizeMargins/VBoxContainer" unique_id=611469863]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FileReader" parent="Window/ResizeMargins/VBoxContainer/Control" unique_id=2047643428 instance=ExtResource("4_af42t")]
+layout_mode = 1

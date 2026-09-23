@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://w6yu1ctw8o6e"]
+[gd_scene format=3 uid="uid://cd4bq0dgggqpr"]
 
-[ext_resource type="Script" uid="uid://yvmo6ms0w56s" path="res://03_OS/03_Taskbar_Icons/taskbar_icon.gd" id="1_1i7ix"]
-[ext_resource type="Texture2D" uid="uid://s8ypmq4pj1b3" path="res://01_Assets/02_Icons/file.png" id="2_gdk4e"]
+[ext_resource type="Script" uid="uid://yvmo6ms0w56s" path="res://03_OS/03_Taskbar_Icons/taskbar_icon.gd" id="1_17ggt"]
+[ext_resource type="Texture2D" uid="uid://s8ypmq4pj1b3" path="res://01_Assets/02_Icons/file.png" id="2_17ggt"]
 
-[node name="TaskbarIcon" type="Control" unique_id=1805623024]
+[node name="FileReaderIcon" type="Control" unique_id=1805623024]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -16,7 +16,7 @@ offset_right = -476.0
 offset_bottom = -224.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1i7ix")
+script = ExtResource("1_17ggt")
 
 [node name="Label" type="Label" parent="." unique_id=508001607]
 visible = false
@@ -38,7 +38,7 @@ grow_vertical = 2
 
 [node name="TextureButton" type="TextureButton" parent="AspectRatioContainer" unique_id=293982635]
 layout_mode = 2
-texture_normal = ExtResource("2_gdk4e")
+texture_normal = ExtResource("2_17ggt")
 ignore_texture_size = true
 stretch_mode = 0
 
