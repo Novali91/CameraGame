@@ -15,7 +15,7 @@ border_width_bottom = 1
 border_color = Color(15.3, 15.3, 15.3, 1)
 
 [node name="TerminalWindow" type="Control" unique_id=1105901653]
-custom_minimum_size = Vector2(180, 180)
+custom_minimum_size = Vector2(400, 400)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 180.0

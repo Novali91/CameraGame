@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://booa2i17tjgda" path="res://01_Assets/02_Icons/taskbar.png" id="3_wbgks"]
 [ext_resource type="PackedScene" uid="uid://bbjttpsskss6k" path="res://03_OS/02_App_Shortcuts/file_viewer_shortcut.tscn" id="4_50mkm"]
 [ext_resource type="PackedScene" uid="uid://oqx8n80x0tgo" path="res://03_OS/02_App_Shortcuts/terminal_shortcut.tscn" id="5_nca2v"]
+[ext_resource type="PackedScene" uid="uid://d2v3j660jaits" path="res://03_OS/02_App_Shortcuts/settings_shortcut.tscn" id="7_6cbok"]
 
 [node name="Desktop" type="Control" unique_id=571881559]
 layout_mode = 3
@@ -38,7 +39,10 @@ texture = ExtResource("3_wbgks")
 [node name="CameraShortcut" parent="." unique_id=1949483686 instance=ExtResource("3_q7grr")]
 
 [node name="FileViewerShortcut" parent="." unique_id=37793875 instance=ExtResource("4_50mkm")]
-position = Vector2(8, 164)
+position = Vector2(8, 165)
 
 [node name="TerminalShortcut" parent="." unique_id=29378389 instance=ExtResource("5_nca2v")]
 position = Vector2(3, 330)
+
+[node name="SettingsShortcut" parent="." unique_id=2101463135 instance=ExtResource("7_6cbok")]
+position = Vector2(0, 495)
