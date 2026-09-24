@@ -9,6 +9,7 @@ class_name Map
 var people: Array[Person] = []
 var camera_locations: Array[CameraLocation] = []
 var conversations: Array[Conversation] = []
+@export var max_time: float
 
 func _ready() -> void:
 	var people_nodes = people_node.get_children()

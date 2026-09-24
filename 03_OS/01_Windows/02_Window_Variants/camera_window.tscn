@@ -5,6 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://bunmb3p2ikbb6" path="res://03_OS/01_Windows/01_Bar/os_bar.tscn" id="3_ki0qp"]
 [ext_resource type="PackedScene" uid="uid://el2nfg1fydul" path="res://02_Map/map.tscn" id="4_u308d"]
 [ext_resource type="Texture2D" uid="uid://c8vnulp2gp55k" path="res://01_Assets/02_Icons/camera.png" id="4_wew6r"]
+[ext_resource type="Texture2D" uid="uid://qe3t250vkk8m" path="res://01_Assets/02_Icons/grabber1.png" id="6_inc78"]
+[ext_resource type="Texture2D" uid="uid://ds6yep0hjmkot" path="res://01_Assets/02_Icons/grabber2.png" id="7_yg8nh"]
+[ext_resource type="Texture2D" uid="uid://cxwacinjnur3e" path="res://01_Assets/02_Icons/grabber3.png" id="8_8ewsk"]
+[ext_resource type="Texture2D" uid="uid://dteu8u7lep80i" path="res://01_Assets/02_Icons/01_Recording_Buttons/rewind.png" id="9_mjirp"]
+[ext_resource type="Texture2D" uid="uid://81fgfw3tx2vw" path="res://01_Assets/02_Icons/01_Recording_Buttons/clicked.png" id="10_ragsd"]
+[ext_resource type="Texture2D" uid="uid://me5gm0nu4s2r" path="res://01_Assets/02_Icons/01_Recording_Buttons/rewind2.png" id="11_ixsmt"]
+[ext_resource type="Texture2D" uid="uid://c1jfwr4thsy8i" path="res://01_Assets/02_Icons/01_Recording_Buttons/play.png" id="12_q82rk"]
+[ext_resource type="Texture2D" uid="uid://bw8dyxvexr5mk" path="res://01_Assets/02_Icons/01_Recording_Buttons/play2.png" id="13_6ixep"]
+[ext_resource type="Texture2D" uid="uid://6glqp8fbfbme" path="res://01_Assets/02_Icons/01_Recording_Buttons/fastforward.png" id="14_cbhcu"]
+[ext_resource type="Texture2D" uid="uid://dyfypbt5r37g0" path="res://01_Assets/02_Icons/01_Recording_Buttons/fastforward2.png" id="15_ne5uk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55gks"]
 bg_color = Color(0.3255085, 0.3255085, 0.3255085, 1)
@@ -12,6 +22,18 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+border_color = Color(15.3, 15.3, 15.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_giocf"]
+content_margin_left = 1.0
+content_margin_top = 10.0
+content_margin_right = 1.0
+content_margin_bottom = 10.0
+bg_color = Color(0.4452832, 0.4452832, 0.4452832, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(15.3, 15.3, 15.3, 1)
 
 [node name="CameraWindow" type="Control" unique_id=1105901653]
@@ -76,20 +98,59 @@ render_target_update_mode = 4
 
 [node name="Map" parent="Window/ResizeMargins/VBoxContainer/Control/AspectRatioContainer/SubViewportContainer/SubViewport" unique_id=1922977521 instance=ExtResource("4_u308d")]
 
-[node name="TimeSlider" type="HSlider" parent="Window/ResizeMargins/VBoxContainer/Control" unique_id=888725762]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-mouse_filter = 1
-max_value = 15.0
-
 [node name="CameraSelector" type="OptionButton" parent="Window/ResizeMargins/VBoxContainer/Control" unique_id=1738741948]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 20.0
 mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/ResizeMargins/VBoxContainer/Control" unique_id=169785528]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -32.0
+offset_right = 130.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="FastBack" type="TextureButton" parent="Window/ResizeMargins/VBoxContainer/Control/HBoxContainer" unique_id=509299812]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("9_mjirp")
+texture_pressed = ExtResource("10_ragsd")
+texture_hover = ExtResource("11_ixsmt")
+
+[node name="PlayPause" type="TextureButton" parent="Window/ResizeMargins/VBoxContainer/Control/HBoxContainer" unique_id=234977151]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("12_q82rk")
+texture_pressed = ExtResource("10_ragsd")
+texture_hover = ExtResource("13_6ixep")
+
+[node name="FastForward" type="TextureButton" parent="Window/ResizeMargins/VBoxContainer/Control/HBoxContainer" unique_id=289995987]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("14_cbhcu")
+texture_pressed = ExtResource("10_ragsd")
+texture_hover = ExtResource("15_ne5uk")
+
+[node name="TimeSlider" type="HSlider" parent="Window/ResizeMargins/VBoxContainer/Control/HBoxContainer" unique_id=1442702431]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_icons/grabber = ExtResource("6_inc78")
+theme_override_icons/grabber_highlight = ExtResource("7_yg8nh")
+theme_override_icons/grabber_disabled = ExtResource("8_8ewsk")
+theme_override_styles/slider = SubResource("StyleBoxFlat_giocf")
+
+[connection signal="pressed" from="Window/ResizeMargins/VBoxContainer/Control/HBoxContainer/FastBack" to="." method="_on_fast_back_pressed"]
+[connection signal="pressed" from="Window/ResizeMargins/VBoxContainer/Control/HBoxContainer/PlayPause" to="." method="_on_play_pause_pressed"]
+[connection signal="pressed" from="Window/ResizeMargins/VBoxContainer/Control/HBoxContainer/FastForward" to="." method="_on_fast_forward_pressed"]
+[connection signal="value_changed" from="Window/ResizeMargins/VBoxContainer/Control/HBoxContainer/TimeSlider" to="." method="_on_time_slider_value_changed"]

@@ -80,6 +80,7 @@ people_node = NodePath("People")
 camera_locations_node = NodePath("Camera Locations")
 conversations_node = NodePath("Conversations")
 conversation_viewer = NodePath("Camera2D/Conversation Viewer")
+max_time = 100.0
 
 [node name="People" type="Node" parent="." unique_id=443070008]
 
