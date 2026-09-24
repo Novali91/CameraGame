@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="File" format=3 uid="uid://bqx4iq05ia5ig"]
 
+[ext_resource type="PackedScene" uid="uid://8h0b62tcmtph" path="res://03_OS/04_Filesystem/02_FileContents/example_doc.tscn" id="1_0er7n"]
 [ext_resource type="Script" uid="uid://dwnorvbig41os" path="res://03_OS/04_Filesystem/file.gd" id="1_bj0bk"]
 
 [resource]
 resource_name = "Johnson"
 script = ExtResource("1_bj0bk")
+attached_pdf = ExtResource("1_0er7n")
 metadata/_custom_type_script = "uid://dwnorvbig41os"

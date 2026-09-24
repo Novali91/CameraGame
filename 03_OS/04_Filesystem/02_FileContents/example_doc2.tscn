@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://blr1woqlh3dwx"]
+
+[ext_resource type="Texture2D" uid="uid://cq173gc7oa86x" path="res://icon.svg" id="1_2cleq"]
+
+[node name="ExampleDoc2" type="Control" unique_id=2039439531]
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_right = 500.0
+offset_bottom = 1000.0
+grow_horizontal = 2
+size_flags_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1819156406]
+layout_mode = 0
+offset_right = 524.0
+offset_bottom = 842.0
+color = Color(18.892157, 18.892157, 18.892157, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1638720359]
+layout_mode = 0
+offset_right = 294.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "hello world again"
+
+[node name="Label2" type="Label" parent="." unique_id=1230526527]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 290.0
+offset_right = 425.0
+offset_bottom = 419.0
+theme_override_colors/font_color = Color(0.7923611, 0, 0.14595279, 1)
+theme_override_font_sizes/font_size = 40
+text = "this one has a picture!"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=897483738]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 408.0
+offset_right = 458.0
+offset_bottom = 613.0
+texture = ExtResource("1_2cleq")

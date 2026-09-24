@@ -1,4 +1,4 @@
 class_name File
 extends Resource
 
-@export var attached_pdf: NodePath
+@export var attached_pdf: PackedScene

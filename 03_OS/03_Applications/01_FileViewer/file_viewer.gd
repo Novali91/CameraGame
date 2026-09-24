@@ -26,8 +26,13 @@ func _item_pressed(item: VisualFile) -> void:
 	if item.is_folder:
 		_enter_folder(item.attached_resource)
 	else:
-		print(desktop)
-		desktop.add_window(window, taskbar_icon)
+		var cur_window = desktop.add_window(window, taskbar_icon)
+		var file = (item.attached_resource as File).attached_pdf.instantiate()
+		var application = cur_window.get_node("Window/ResizeMargins/VBoxContainer/Control/FileReader")
+		application.add_child(file)
+		file.owner = application
+		cur_window._os_bar.title = file.name
+		cur_window._os_bar.update_title_and_icon()
 
 func _enter_folder(folder: Folder) -> void:
 	_folder_scope.append(folder)

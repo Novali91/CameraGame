@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="File" format=3 uid="uid://duv3on330sr47"]
 
+[ext_resource type="PackedScene" uid="uid://blr1woqlh3dwx" path="res://03_OS/04_Filesystem/02_FileContents/example_doc2.tscn" id="1_3ly1m"]
 [ext_resource type="Script" uid="uid://dwnorvbig41os" path="res://03_OS/04_Filesystem/file.gd" id="1_h7es8"]
 
 [resource]
 resource_name = "Start Here!"
 script = ExtResource("1_h7es8")
+attached_pdf = ExtResource("1_3ly1m")
 metadata/_custom_type_script = "uid://dwnorvbig41os"
