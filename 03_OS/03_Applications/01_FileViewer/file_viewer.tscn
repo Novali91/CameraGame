@@ -13,6 +13,13 @@ script = ExtResource("1_xrljf")
 [node name="FileViewerBar" parent="." unique_id=133377203 instance=ExtResource("2_sy82w")]
 layout_mode = 2
 
+[node name="SearchBar" type="LineEdit" parent="FileViewerBar" unique_id=2124366930]
+layout_mode = 2
+
+[node name="SearchButton" type="Button" parent="FileViewerBar" unique_id=1379104561]
+layout_mode = 2
+text = "Search"
+
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1712284575]
 layout_mode = 2
 size_flags_vertical = 3
@@ -29,3 +36,6 @@ layout_mode = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 15
 script = ExtResource("3_hen3p")
+
+[connection signal="text_submitted" from="FileViewerBar/SearchBar" to="." method="_on_search_bar_text_submitted"]
+[connection signal="pressed" from="FileViewerBar/SearchButton" to="." method="_on_search_button_pressed"]
