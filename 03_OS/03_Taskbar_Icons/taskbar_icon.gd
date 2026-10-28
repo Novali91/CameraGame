@@ -1,15 +1,18 @@
 extends Control
 class_name TaskbarIcon
 
-@onready var label: Label = $Label
+@onready var nameBubble: Control = $NameBubble
 var desktop: Desktop
 var window: OSWindow
 
+func set_title(new_name: String):
+	nameBubble.get_node("Label").text = new_name
+
 func _on_mouse_entered() -> void:
-	label.visible = true
+	nameBubble.visible = true
 
 func _on_mouse_exited() -> void:
-	label.visible = false
+	nameBubble.visible = false
 
 func _on_pressed() -> void:
 	window.selected()

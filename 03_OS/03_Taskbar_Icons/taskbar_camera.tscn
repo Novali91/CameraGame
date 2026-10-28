@@ -18,16 +18,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_el753")
 
-[node name="Label" type="Label" parent="." unique_id=508001607]
-visible = false
-layout_mode = 0
-offset_left = -1.0
-offset_top = -11.0
-offset_right = 51.0
-theme_override_font_sizes/font_size = 7
-text = "Camera"
-horizontal_alignment = 1
-
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=534047639]
 layout_mode = 1
 anchors_preset = 15
@@ -42,6 +32,30 @@ texture_normal = ExtResource("2_el753")
 ignore_texture_size = true
 stretch_mode = 0
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[node name="NameBubble" type="Control" parent="." unique_id=1554047411]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="NameBubble" unique_id=710571204]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -10.0
+offset_right = 94.0
+offset_bottom = 5.0
+color = Color(0, 0, 0, 0.5058824)
+
+[node name="Label" type="Label" parent="NameBubble" unique_id=1267424018]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -10.0
+offset_right = 94.0
+offset_bottom = 5.0
+theme_override_font_sizes/font_size = 12
+text = "a"
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="AspectRatioContainer/TextureButton" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AspectRatioContainer/TextureButton" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="AspectRatioContainer/TextureButton" to="." method="_on_pressed"]

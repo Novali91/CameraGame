@@ -23,6 +23,7 @@ func add_window(window_scene: PackedScene, taskbar_icon_scene: PackedScene) -> O
 	taskbar_icon.window = window
 	taskbar_icon.desktop = self
 	window.taskbar_icon = taskbar_icon
+	taskbar_icon.set_title(window._os_bar.title)
 	order_taskbar()
 	return window
 
